@@ -1,0 +1,67 @@
+.card {
+    background-size: cover;
+    background-position: center;
+    width: 180px;
+    height: 250px;
+}
+
+.tab-content {
+    overflow: auto;
+    margin-top: 3%;
+}
+
+.btn:hover {
+    background-size: 102%;
+    box-shadow: 1px 1px 5px 0px #555555ab;
+}
+
+h1 {
+    color: #33587F;
+    text-align: center;
+    font-size: 60px;
+}
+
+#canvas-wrapper {
+    position: relative;
+    margin-top: 5%;
+    float: left;
+    margin-bottom: 2%;    
+}
+
+a {
+    color: #555555;
+    text-decoration: none;
+}
+
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover {
+    color: white;
+    background-color: #F89ABA;
+
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    cursor: default;
+    /*transform: scale(1.2);*/
+}
+
+#canvas{
+    background-image: url(../../assets/bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#canvastab {
+
+}
+
+#commands{
+    position: absolute;
+    top:10%;
+   margin: auto;
+   
+}
+
+.addbtn{
+    border-radius: 30px;
+    
+}
