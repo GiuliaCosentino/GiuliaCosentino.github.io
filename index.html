@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/mine.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
     <style>
         pre {
             margin-left: 15px !important
@@ -78,7 +80,7 @@
 
 
     <div id="bd-wrapper" ng-controller="CanvasControls">
-        <h1><span>InvenTool</span></h1>
+       
 
         <!--[if IE]><script src="../lib/fonts/Delicious.font.js"></script><![endif]-->
 
@@ -99,24 +101,32 @@
         </div>
 
 
+        
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img">
+  <div id="caption"></div>
+</div>
 
         <div id="commands" ng-click="maybeLoadShape($event)">
 
 
 
             <ul class="nav nav-tabs">
+                <li> <h1><span>InvenTool</span></h1></li>
 
+                
+
+                <li><a class="cardname" href="#scenario" data-toggle="tab">SCENARIO</a></li>
+                <li><a class="cardname" href="#personas" data-toggle="tab">PERSONAS</a></li>
+                <li><a class="cardname" href="#missions" data-toggle="tab">MISSIONS</a></li>
+                <li><a class="cardname" href="#things" data-toggle="tab">THINGS</a></li>
+                <li><a class="cardname" href="#humanactions" data-toggle="tab">HUMAN ACTIONS </a></li>
+                <li><a class="cardname" href="#sensors" data-toggle="tab">SENSORS </a></li>
+                <li><a class="cardname" href="#services" data-toggle="tab">SERVICES </a></li>
+                <li><a class="cardname" href="#feedback" data-toggle="tab">FEEDBACK</a></li>
+                <li><a class="cardname" href="#criteria" data-toggle="tab">CRITERIA</a></li>
                 <li><input type="file" id="loadFile"></li>
-
-                <li><a href="#scenario" data-toggle="tab">SCENARIO</a></li>
-                <li><a href="#personas" data-toggle="tab">PERSONAS</a></li>
-                <li><a href="#missions" data-toggle="tab">MISSIONS</a></li>
-                <li><a href="#things" data-toggle="tab">THINGS</a></li>
-                <li><a href="#humanactions" data-toggle="tab">HUMAN ACTIONS </a></li>
-                <li><a href="#sensors" data-toggle="tab">SENSORS </a></li>
-                <li><a href="#services" data-toggle="tab">SERVICES </a></li>
-                <li><a href="#feedback" data-toggle="tab">FEEDBACK</a></li>
-                <li><a href="#criteria" data-toggle="tab">CRITERIA</a></li>
 
 
                 <li>

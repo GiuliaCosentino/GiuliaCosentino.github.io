@@ -1,4 +1,4 @@
-var assetsfolder = "../assets/";
+var assetsfolder = "./assets/";
 var scale = 0.1;
 
 var cards = {};
@@ -69,7 +69,38 @@ $(document).ready(function () {
 
     console.log("I'm ready!");
 
+    canvas.on('mouse:up', function (options) {
+        var el = options.target._element;
+        var src = $(el).attr('src');
+        var id = src.substring(
+            src.lastIndexOf("/") + 1,
+            src.lastIndexOf(".")
+        );
+       showInfo(src);
+    });
+
 });
+
+function showInfo(src){
+ console.log(img)
+    
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("img");
+   
+
+modal.style.display = "block";
+modalImg.src = src;
+    
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+   
+    
+
+    
+}
 
 function createCards() {
 
@@ -95,12 +126,13 @@ function createCards() {
         var type = $(this).attr("data-type");
         console.log(index, type);
         addImage(index, type);
+        $(".tab-content").css("display", "none");
         $(".tab-pane.active").removeClass("active");
         $(".nav-tabs li.active").removeClass("active");
         $(this).css("background-color", e.type === "mouseenter" ? cards[key].color : "transparent");
 
         $("a[href='#" + type + "']").css("background-color", "transparent");
-        $("a[href='#" + type + "']").css("color", "#555555");
+        $("a[href='#" + type + "']").css("color", "#2C495E");
 
     });
 
@@ -112,22 +144,27 @@ function createCards() {
             console.log("3");
         } else {
             $(this).css("background-color", e.type === "mouseenter" ? cards[key].color : "transparent");
-            $(this).css("color", e.type === "mouseenter" ? "white" : "#555555");
+            $(this).css("color", e.type === "mouseenter" ? "white" : "#2C495E");
             console.log("4");
         }
 
     });
 
     $("ul.nav li a").click(function (e) {
+        $(".tab-content").css("display", "block");
         $("ul.nav li a").css("background-color", "transparent");
-        $("ul.nav li a").css("color", "#555555");
+        $("ul.nav li a").css("color", "#2C495E");
+        $(".tab-content").css("background-color", "white");
+        $(".tab-content").css("padding", "2%");
         var key = $(this).attr("href").replace("#", "");
         var ourdiv = $("div#" + key);
 
         if (ourdiv.hasClass("active")) {
             ourdiv.removeClass("active");
             $(this).css("background-color", "transparent");
-            $(this).css("color", "#555555");
+            $(this).css("color", "#2C495E");
+            $(".tab-content").css("display", "none");
+
             console.log("1");
         } else {
             $(".tab-pane.active").removeClass("active");
@@ -140,6 +177,31 @@ function createCards() {
     })
 
 }
+
+function addImage(index, key) {
+    var scale = window.scale;
+    var coord = getRandomLeftTop();
+
+    var url = assetsfolder + key + '/cards' + index + '.png';
+
+    fabric.Image.fromURL(url, function (image) {
+
+        image.set({
+                left: coord.left,
+                top: coord.top,
+                angle: 0,
+                hasControls: false,
+
+            })
+            .scale(0.15)
+            .setCoords();
+
+
+        canvas.add(image);
+    });
+};
+
+
 
 function saveAsFile() {
     var data = JSON.stringify(canvas);
@@ -171,7 +233,7 @@ function exportImage() {
     bgcanvas.height = height;
 
     img.onload = function () {
-        
+
         bgcontext.drawImage(img, 0, 0, img.width, img.height, 0, 0, width, height);
 
         var totalcontext = totalcanvas.getContext('2d');
@@ -188,17 +250,13 @@ function exportImage() {
             document.body.removeChild(a);
         });
 
-        
+
     };
 
-    img.src = '../assets/bg.png';
-
-
-
-
-
+    img.src = '../assets/background.png';
 
 }
+
 
 function loadFile() {
     files = $("#loadFile").get(0).files;
@@ -215,26 +273,8 @@ function loadFile() {
     reader.readAsText(files[0]);
 }
 
-function addImage(index, key) {
-    var scale = window.scale;
-    var coord = getRandomLeftTop();
 
-    var url = assetsfolder + key + '/cards' + index + '.png';
 
-    fabric.Image.fromURL(url, function (image) {
-
-        image.set({
-                left: coord.left,
-                top: coord.top,
-                angle: 0,
-                hasControls: false
-            })
-            .scale(0.15)
-            .setCoords();
-
-        canvas.add(image);
-    });
-};
 
 function getActiveStyle(styleName, object) {
     object = object || canvas.getActiveObject();
