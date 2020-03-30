@@ -97,7 +97,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap" rel="stylesheet">
 
         <div id="canvas-wrapper">
-            <canvas id="canvas" width="1580" height="790" margin-bottom="2%"></canvas>
+            <canvas class="center" id="canvas" width="1640" height="900" margin-bottom="2%"></canvas>
         </div>
 
 
@@ -106,6 +106,10 @@
   <span class="close">&times;</span>
   <img class="modal-content" id="img">
   <div id="caption"></div>
+     
+    <button class="btn btn-object-action addbtn" id="remove-selected" ng-click="removeSelected()">
+                        Cancella 
+                    </button>
 </div>
 
         <div id="commands" ng-click="maybeLoadShape($event)">
@@ -113,7 +117,8 @@
 
 
             <ul class="nav nav-tabs">
-                <li> <h1><span>InvenTool</span></h1></li>
+                <li> <h1><span>InvenTools</span></h1></li>
+                 <li class="divider-vertical"></li>
 
                 
 
@@ -126,17 +131,23 @@
                 <li><a class="cardname" href="#services" data-toggle="tab">SERVICES </a></li>
                 <li><a class="cardname" href="#feedback" data-toggle="tab">FEEDBACK</a></li>
                 <li><a class="cardname" href="#criteria" data-toggle="tab">CRITERIA</a></li>
-                <li><input type="file" id="loadFile"></li>
+                 <li class="divider-vertical"></li>
+                
+                 <li><button class="btn btn-info  addbtn" ng-click="confirmClear()"><input type="file" id="loadFile"></button></li>
+                
+                 <li class="divider-vertical"></li>
+                
+                <li><button class="btn btn-load clear addbtn" ng-click="confirmClear()"><input type="file" id="loadFile"></button></li>
 
 
-                <li>
+                 <!--  <li>
                     <div id="drawing-mode-wrapper">
 
                         <button id="drawing-mode" class="btn btn-info addbtn" ng-click="setFreeDrawingMode(!getFreeDrawingMode())" ng-class="{'btn-inverse': getFreeDrawingMode()}">
                             {[ getFreeDrawingMode() ? 'Esci da Disegna' : 'Disegna' ]}
                         </button>
 
-                        <div id="drawing-mode-options" ng-show="getFreeDrawingMode()">
+                     <div id="drawing-mode-options" ng-show="getFreeDrawingMode()">
                             <label for="drawing-mode-selector">Mode:</label>
                             <select id="drawing-mode-selector" bind-value-to="drawingMode">
                                 <option>Pencil</option>
@@ -161,21 +172,21 @@
                             <input type="range" value="0" min="0" max="50" bind-value-to="drawingLineShadowWidth">
                         </div>
                     </div>
-                </li>
+                </li>-->
 
-                <li><button class="btn btn-danger clear addbtn" ng-click="confirmClear()">Cancella tutto</button></li>
-                <li> <button class="btn btn-object-action addbtn" id="remove-selected" ng-click="removeSelected()">
-                        Cancella 
-                    </button></li>
-
-                <li>
+                <li><button class="btn btn-danger clear addbtn" ng-click="confirmClear()"></button></li>
+              
+ <li><button class="btn btn-save clear addbtn"></button></li>
+                
+                <!-- <li>
+                    
                     <button class="btn btn-success addbtn" id="rasterize" onclick="exportImage()">
-                        Esporta
+                       
                     </button>
                     <button type="button" class="btn btn-info" onclick="saveAsFile()">
-                        Salva con nome...
+                       
                     </button>
-                </li>
+                </li>-->
 
                 <!--<li><a href="#canvastab" data-toggle="tab">Canvas</a></li>
                 <li><a href="#load-svg-pane" data-toggle="tab">Load SVG</a></li>

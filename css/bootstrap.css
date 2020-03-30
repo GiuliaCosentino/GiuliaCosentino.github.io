@@ -209,7 +209,7 @@
     font-size: 14px;
     line-height: 20px;
     color: #333333;
-    background-color: #ffffff;
+    background-color: rgba(199, 178, 154, 0.10);
   }
   a {
     color: #0088cc;

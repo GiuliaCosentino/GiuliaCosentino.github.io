@@ -1,3 +1,8 @@
+#bd-wrapper {
+  padding: 0px; 
+    min-width: 1200px;
+}
+
 .card {
     background-size: cover;
     background-position: center;
@@ -25,13 +30,13 @@ h1 {
 
 #canvas-wrapper {
     position: relative;
-    margin-top: 5%;
+    margin-top: 4%;
     float: left;
     margin-bottom: 2%;    
 }
 
 a {
-    color: #555555;
+    color: #2C495E;
     text-decoration: none;
 }
 
@@ -73,10 +78,10 @@ a {
     position: fixed;
     z-index: 1;
     padding-top: 100px;
-    left: 1390px;
+    left: 1480px;
     top: 390px;
-    width: 400px;
-    height: 360px;
+    width: 450px;
+    height: 400px;
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: white;}
@@ -89,17 +94,22 @@ a {
     border: 1px solid #888;
     width: 60%;
     position: absolute;
-    left: 25%;
+    left: 20%;
     top: 10%;
 }
 .cardname{
-    margin-top: 25px;
+    margin-top: 20px;
   
 }
 
 .nav{
     background-color: #E1EAEB;
     
+}
+
+.btn-object-action{
+    margin-top: 80%;
+        margin-left:40%;
 }
 
  .close {
@@ -115,3 +125,110 @@ a {
     opacity: 0.2;
     filter: alpha(opacity=20);
 }
+
+.divider-vertical {
+    border-left: 3px solid white;
+    height: 50px;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+.canvas-container {
+    margin: 0 auto;
+ border: 0px solid;
+}
+.center{
+   
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+.btn-danger {
+     background-image: url( ../assets/icon/1x/cancella%20tutto.png)!important;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    background: no-repeat;
+    background-size: 70%;
+    background-position-x: center;
+    background-position-y: center;
+    margin-right: 5%;
+}
+
+.addbtn:hover {
+   box-shadow: 1px 1px 5px 0px #555555ab;
+    background-color: white !important;
+    background-size: 80% !important;
+      
+}
+
+.btn-load {
+     background-image: url( ../assets/icon/1x/upload.png)!important;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    background: no-repeat;
+    background-size: 70%;
+    background-position-x: center;
+    background-position-y: center;      
+}
+
+#loadFile{
+    display: none;
+}
+
+.btn-save {
+     background-image: url( ../assets/icon/1x/dowload.png)!important;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    background: no-repeat;
+    background-size: 70%;
+    background-position-x: center;
+    background-position-y: center;      
+}
+
+.btn-info {
+     background-image: url( ../assets/icon/1x/info.png)!important;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    background: no-repeat;
+    background-size:80%;
+    background-position-x: center;
+    background-position-y: center;      
+}
+
+.nav {
+    
+    width: 1700px!important;
+}
+
+
+.nav-tabs > li > a {
+    font-family: "Inconsolata"!important;
+    font-size: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    line-height: 20px;
+    border: 1px solid transparent;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+
+.nav-tabs > li > a, .nav-pills > li > a {
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-right: 10px;
+    line-height: 14px;
+}
+
+.btn .addbtn :hover {
+    background-size: 102%;
+    box-shadow: 1px 1px 5px 0px #555555ab;
+}
+
