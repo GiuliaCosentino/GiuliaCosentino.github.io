@@ -70,6 +70,10 @@ a {
 
 .addbtn{
     border-radius: 30px;
+     margin-left: 10%!important;
+    margin-right: 10%!important;
+    margin-top: 20%!important;
+    background-color: white!important;
     
 }
 
