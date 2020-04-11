@@ -742,6 +742,8 @@ function addAccessors($scope) {
         canvas.discardActiveObject()
         if (activeObjects.length) {
             canvas.remove.apply(canvas, activeObjects);
+            $(".modal").css("display", "none");
+            
         }
     };
 

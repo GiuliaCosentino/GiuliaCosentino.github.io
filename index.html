@@ -133,11 +133,11 @@
                 <li><a class="cardname" href="#criteria" data-toggle="tab">CRITERIA</a></li>
                  <li class="divider-vertical"></li>
                 
-                 <li><button class="btn btn-info  addbtn" ng-click="confirmClear()"><input type="file" id="loadFile"></button></li>
+                 <li><button class="btn btn-info  addbtn"></button></li>
                 
                
                 
-                <li><button class="btn btn-load clear addbtn" ng-click="confirmClear()"><input type="file" id="loadFile"></button></li>
+                <li><button class="btn btn-load addbtn" ng-click=""><input type="file" ></button></li>
 
 
                  <!--  <li>
@@ -175,7 +175,14 @@
                 </li>-->
 
                
- <li><button class="btn btn-save clear addbtn"></button></li>
+ <li><button class="btn btn-save addbtn  dropdown">
+    
+     <div class="dropdown-content">
+<p id="rasterize" onclick="saveAsFile()"> Save as..</p>
+    <p id="rasterize" onclick="exportImage()"> Export</p>
+    
+  </div>
+     </button></li>
                   <li class="divider-vertical"></li>
                 
                  <li><button class="btn btn-danger clear addbtn" ng-click="confirmClear()"></button></li>
@@ -302,6 +309,7 @@
                         </p>
                         <p>
                             <button class="btn btn-danger clear" ng-click="confirmClear()">Clear canvas</button>
+                            
                             <button class="btn btn-object-action" id="remove-selected" ng-click="removeSelected()">
                                 Remove selected object/group
                             </button>
