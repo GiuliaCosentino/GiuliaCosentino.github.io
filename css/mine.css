@@ -1,5 +1,5 @@
 #bd-wrapper {
-  padding: 0px; 
+    padding: 0px;
     min-width: 1200px;
 }
 
@@ -12,9 +12,8 @@
 
 .tab-content {
     overflow: auto;
-  
-        height: 700px;
-  
+    height: 700px;
+    display: none;
 }
 
 .btn:hover {
@@ -32,7 +31,7 @@ h1 {
     position: relative;
     margin-top: 4%;
     float: left;
-    margin-bottom: 2%;    
+    margin-bottom: 2%;
 }
 
 a {
@@ -51,48 +50,47 @@ a {
     /*transform: scale(1.2);*/
 }
 
-#canvas{
+#canvas {
     background-image: url(../../assets/background.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-#canvastab {
+#canvastab {}
 
-}
-
-#commands{
+#commands {
     position: absolute;
-    top:0;
-   margin: auto;
-   
+    top: 0;
+    margin: auto;
+
 }
 
-.addbtn{
+.addbtn {
     border-radius: 30px;
-    
-    margin-right: 10%!important;
-   
-    background-color: white!important;
-    
+
+    margin-right: 10% !important;
+
+    background-color: white !important;
+
 }
 
 .modal {
-        display: none;
+    display: none;
     position: fixed;
     z-index: 1;
     padding-top: 100px;
-    left: 1480px;
-    top: 390px;
+    left: 50%;
+    top: 40%;
     width: 450px;
     height: 400px;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: white;}
+    background-color: rgb(0, 0, 0);
+    background-color: white;
+}
 
 /* Modal Content */
 .modal-content {
-      background-color: #fefefe;
+    background-color: #fefefe;
     margin: auto;
     /* padding: 20px; */
     border: 1px solid #888;
@@ -101,22 +99,23 @@ a {
     left: 20%;
     top: 10%;
 }
-.cardname{
+
+.cardname {
     margin-top: 20px;
-  
+
 }
 
-.nav{
+.nav {
     background-color: #E1EAEB;
-    
+
 }
 
-.btn-object-action{
+.btn-object-action {
     margin-top: 80%;
-        margin-left:40%;
+    margin-left: 40%;
 }
 
- .close {
+.close {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -136,18 +135,21 @@ a {
     margin-top: 2px;
     margin-left: 10px;
 }
+
 .canvas-container {
     margin: 0 auto;
- border: 0px solid;
+    border: 0px solid;
 }
-.center{
-   
-  margin: auto;
-  width: 50%;
-  padding: 10px;
+
+.center {
+
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 }
+
 .btn-danger {
-     background-image: url( ../assets/icon/1x/cancella%20tutto.png)!important;
+    background-image: url(../assets/icon/1x/cancella%20tutto.png) !important;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -160,14 +162,14 @@ a {
 }
 
 .addbtn:hover {
-   box-shadow: 1px 1px 5px 0px #555555ab;
+    box-shadow: 1px 1px 5px 0px #555555ab;
     background-color: white !important;
     background-size: 80% !important;
-      
+
 }
 
 .btn-load {
-     background-image: url( ../assets/icon/1x/upload.png)!important;
+    background-image: url(../assets/icon/1x/upload.png) !important;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -175,15 +177,15 @@ a {
     background: no-repeat;
     background-size: 70%;
     background-position-x: center;
-    background-position-y: center;      
+    background-position-y: center;
 }
 
-#loadFile{
+#loadFile {
     display: none;
 }
 
 .btn-save {
-     background-image: url( ../assets/icon/1x/dowload.png)!important;
+    background-image: url(../assets/icon/1x/dowload.png) !important;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -191,31 +193,30 @@ a {
     background: no-repeat;
     background-size: 70%;
     background-position-x: center;
-    background-position-y: center;      
+    background-position-y: center;
 }
 
 .btn-info {
-     background-image: url( ../assets/icon/1x/info.png)!important;
+    background-image: url(../assets/icon/1x/info.png) !important;
     border-radius: 50%;
     width: 40px;
     height: 40px;
     background-color: white;
     background: no-repeat;
-    background-size:80%;
+    background-size: 80%;
     background-position-x: center;
-    background-position-y: center;      
+    background-position-y: center;
 }
 
 
 
 .nav {
-    
-    width: 1700px!important;
+    width: 100% !important;
 }
 
 
 .nav-tabs > li > a {
-    font-family: "Inconsolata"!important;
+    font-family: "Inconsolata" !important;
     font-size: 20px;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -226,11 +227,16 @@ a {
     border-radius: 4px 4px 0 0;
 }
 
-.nav-tabs > li > a, .nav-pills > li > a {
-    padding-right: 12px;
-    padding-left: 12px;
-    margin-right: 10px;
+.nav-tabs > li > a,
+.nav-pills > li > a {
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-right: 8px;
     line-height: 14px;
+}
+
+.nav-tabs li a{
+    font-size: 1vw;
 }
 
 .btn .addbtn :hover {
@@ -239,11 +245,11 @@ a {
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
+    display: none;
+    position: absolute;
     background-color: #f9f9f9;
     min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     padding: 5px 16px;
     z-index: 1;
     margin-top: 40%;
@@ -251,20 +257,31 @@ a {
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-  display: block;
+    display: block;
 }
 
-.dropdown-content p:hover {background-color: #f1f1f1}
+.dropdown-content p:hover {
+    background-color: #f1f1f1
+}
 
 
+a.storyboardPlus{
+    background-image: url(../assets/storyboard/plus.png);
+    background-size:cover;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}

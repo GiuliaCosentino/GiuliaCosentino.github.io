@@ -18,10 +18,6 @@
 
     </style>
 
-    <!--[if lt IE 9]>
-      <script src="../lib/excanvas.js"></script>
-    <![endif]-->
-
     <script src="lib/prism.js"></script>
     <script>
         (function() {
@@ -40,19 +36,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
 
     <script src="js/canvas-to-blob.js"></script>
+
+    <script src="lib/jquery.js"></script>
+    <script src="lib/bootstrap.js"></script>
+    <script src="js/paster.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/kitchensink.css">
+    <link rel="stylesheet" href="css/mine.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Plaster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!--<ul id="header">
-        <li><a href="http://fabricjs.com/">Home</a></li>
-        <li><a href="http://fabricjs.com/demos">Demos</a></li>
-        <li><a href="http://fabricjs.com/articles">Tutorial</a></li>
-        <li><a href="http://fabricjs.com/docs">Docs</a></li>
-        <li><a href="http://fabricjs.com/build">Custom Build</a></li>
-        <li><a href="http://fabricjs.com/help">Support</a></li>
-        <li><a href="http://fabricjs.com/test">Tests/Benchmarks</a></li>
-        <li><a href="http://fabricjs.com/team">Team</a></li>
-    </ul>-->
+
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script>
         (function() {
@@ -80,47 +79,34 @@
 
 
     <div id="bd-wrapper" ng-controller="CanvasControls">
-       
 
-        <!--[if IE]><script src="../lib/fonts/Delicious.font.js"></script><![endif]-->
 
-        <script src="lib/jquery.js"></script>
-        <script src="lib/bootstrap.js"></script>
-        <script src="js/paster.js"></script>
-
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/kitchensink.css">
-        <link rel="stylesheet" href="css/mine.css">
-
-        <link href='http://fonts.googleapis.com/css?family=Plaster' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap" rel="stylesheet">
 
         <div id="canvas-wrapper">
             <canvas class="center" id="canvas" width="1640" height="900" margin-bottom="2%"></canvas>
         </div>
 
 
-        
-<div id="myModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img">
-  <div id="caption"></div>
-     
-    <button class="btn btn-object-action addbtn" id="remove-selected" ng-click="removeSelected()">
-                        Cancella 
-                    </button>
-</div>
+
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img">
+            <div id="caption"></div>
+
+            <button class="btn btn-object-action addbtn" id="remove-selected" ng-click="removeSelected()">
+                Cancella
+            </button>
+        </div>
 
         <div id="commands" ng-click="maybeLoadShape($event)">
 
 
 
             <ul class="nav nav-tabs">
-                <li> <h1><span>InvenTools</span></h1></li>
-                 <li class="divider-vertical"></li>
-
-                
+                <li>
+                    <h1><span>InvenTools</span></h1>
+                </li>
+                <li class="divider-vertical"></li>
 
                 <li><a class="cardname" href="#scenario" data-toggle="tab">SCENARIO</a></li>
                 <li><a class="cardname" href="#personas" data-toggle="tab">PERSONAS</a></li>
@@ -131,16 +117,16 @@
                 <li><a class="cardname" href="#services" data-toggle="tab">SERVICES </a></li>
                 <li><a class="cardname" href="#feedback" data-toggle="tab">FEEDBACK</a></li>
                 <li><a class="cardname" href="#criteria" data-toggle="tab">CRITERIA</a></li>
-                 <li class="divider-vertical"></li>
-                
-                 <li><button class="btn btn-info  addbtn"></button></li>
-                
-               
-                
-                <li><button class="btn btn-load addbtn" ng-click=""><input type="file" ></button></li>
+                <li class="divider-vertical"></li>
+
+                <li><button class="btn btn-info  addbtn"></button></li>
 
 
-                 <!--  <li>
+
+                <li><button class="btn btn-load addbtn" ng-click=""><input type="file"></button></li>
+
+
+                <!--  <li>
                     <div id="drawing-mode-wrapper">
 
                         <button id="drawing-mode" class="btn btn-info addbtn" ng-click="setFreeDrawingMode(!getFreeDrawingMode())" ng-class="{'btn-inverse': getFreeDrawingMode()}">
@@ -174,20 +160,20 @@
                     </div>
                 </li>-->
 
-               
- <li><button class="btn btn-save addbtn  dropdown">
-    
-     <div class="dropdown-content">
-<p id="rasterize" onclick="saveAsFile()"> Save as..</p>
-    <p id="rasterize" onclick="exportImage()"> Export</p>
-    
-  </div>
-     </button></li>
-                  <li class="divider-vertical"></li>
-                
-                 <li><button class="btn btn-danger clear addbtn" ng-click="confirmClear()"></button></li>
-              
-                
+
+                <li><button class="btn btn-save addbtn  dropdown">
+
+                        <div class="dropdown-content">
+                            <p id="rasterize" onclick="saveAsFile()"> Save as..</p>
+                            <p id="rasterize" onclick="exportImage()"> Export</p>
+
+                        </div>
+                    </button></li>
+                <li class="divider-vertical"></li>
+
+                <li><button class="btn btn-danger clear addbtn" ng-click="confirmClear()"></button></li>
+
+
                 <!-- <li>
                     
                     <button class="btn btn-success addbtn" id="rasterize" onclick="exportImage()">
@@ -213,20 +199,20 @@
                 <div class="tab-pane " id="scenario">
 
                     <!--<p>Add <strong>simple shapes</strong> to canvas:</p>
-      <p>
-        <button type="button" class="btn rect" ng-click="addRect()">Rectangle</button>
-        <button type="button" class="btn circle" ng-click="addCircle()">Circle</button>
-        <button type="button" class="btn triangle" ng-click="addTriangle()">Triangle</button>
-        <button type="button" class="btn line" ng-click="addLine()">Line</button>
-        <button type="button" class="btn polygon" ng-click="addPolygon()">Polygon</button>
-      </p>
+                      <p>
+                        <button type="button" class="btn rect" ng-click="addRect()">Rectangle</button>
+                        <button type="button" class="btn circle" ng-click="addCircle()">Circle</button>
+                        <button type="button" class="btn triangle" ng-click="addTriangle()">Triangle</button>
+                        <button type="button" class="btn line" ng-click="addLine()">Line</button>
+                        <button type="button" class="btn polygon" ng-click="addPolygon()">Polygon</button>
+                      </p>
 
-      <p>
-        <button class="btn" ng-click="addText()">Add text</button>
-        <button class="btn" ng-click="addIText()">Add Itext</button>
-        <button class="btn" ng-click="addTextbox()">Add textbox</button>
-        <button class="btn" ng-click="addPatternRect()">Add pattern rect</button>
-      </p> -->
+                      <p>
+                        <button class="btn" ng-click="addText()">Add text</button>
+                        <button class="btn" ng-click="addIText()">Add Itext</button>
+                        <button class="btn" ng-click="addTextbox()">Add textbox</button>
+                        <button class="btn" ng-click="addPatternRect()">Add pattern rect</button>
+                      </p> -->
 
 
 
@@ -309,7 +295,7 @@
                         </p>
                         <p>
                             <button class="btn btn-danger clear" ng-click="confirmClear()">Clear canvas</button>
-                            
+
                             <button class="btn btn-object-action" id="remove-selected" ng-click="removeSelected()">
                                 Remove selected object/group
                             </button>

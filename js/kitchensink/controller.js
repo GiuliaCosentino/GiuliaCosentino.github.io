@@ -58,14 +58,34 @@ cards.criteria = {
     color: "#DC2597"
 }
 
+var storyboardImages = [];
+
+
+var storyboardPluses = [];
+
+storyboardPluses.push({
+    left: 53,
+    top: 10
+}); //1
+storyboardPluses.push({
+    left: 65,
+    top: 10
+}); //2
+
+
 var view = {};
 
+var headerheight = 100;
 
 $(document).ready(function () {
 
     $("#loadFile").change(loadFile);
+    view["canvas-container"] = $(".canvas-container");
+    view["lower-canvas"] = $(".lower-canvas");
+    view["upper-canvas"] = $(".upper-canvas");
 
     createCards();
+    createPluses();
 
     console.log("I'm ready!");
 
@@ -76,30 +96,75 @@ $(document).ready(function () {
             src.lastIndexOf("/") + 1,
             src.lastIndexOf(".")
         );
-       showInfo(src);
+        showInfo(src);
     });
+
+
+
+    resize();
+
 
 });
 
-function showInfo(src){
- console.log(img)
-    
-var modal = document.getElementById("myModal");
-var modalImg = document.getElementById("img");
-   
+$(window).resize(function () {
+    //resize();
+});
 
-modal.style.display = "block";
-modalImg.src = src;
-    
-var span = document.getElementsByClassName("close")[0];
+function resize() {
+    view["canvas-container"].css({
+        width: window.innerWidth + "px",
+        height: (window.innerHeight - headerheight) + "px"
+    });
+    view["canvas-container"].attr("width", window.innerWidth);
+    view["canvas-container"].attr("height", window.innerHeight - headerheight);
 
-span.onclick = function() { 
-  modal.style.display = "none";
+    view["lower-canvas"].css({
+        width: window.innerWidth + "px",
+        height: (window.innerHeight - headerheight) + "px"
+    });
+    view["lower-canvas"].attr("width", window.innerWidth);
+    view["lower-canvas"].attr("height", window.innerHeight - headerheight);
+
+    view["upper-canvas"].css({
+        width: window.innerWidth + "px",
+        height: (window.innerHeight - headerheight) + "px"
+    });
+    view["upper-canvas"].attr("width", window.innerWidth);
+    view["upper-canvas"].attr("height", window.innerHeight - headerheight);
 }
-   
-    
 
-    
+function showInfo(src) {
+    console.log(img)
+
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("img");
+
+    modal.style.display = "block";
+    modalImg.src = src;
+
+    var span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+}
+
+function createPluses() {
+
+    var el = "";
+    for (n in storyboardPluses) {
+        var left = storyboardPluses[n].left * window.innerWidth / 100;
+        var top = storyboardPluses[n].top * window.innerHeight / 100;
+        el += '<a class="storyboardPlus" data-index="' + n + '" style="left:' + left + 'px; top:' + top + 'px"></button>';
+    }
+
+    view["canvas-container"].append(el);
+
+    $("a.storyboardPlus").on("click", function () {
+        var id = $(this).attr("data-index")
+        console.log("Hai cliccato il + numero: " + id);
+    });
+
 }
 
 function createCards() {
@@ -743,7 +808,7 @@ function addAccessors($scope) {
         if (activeObjects.length) {
             canvas.remove.apply(canvas, activeObjects);
             $(".modal").css("display", "none");
-            
+
         }
     };
 
