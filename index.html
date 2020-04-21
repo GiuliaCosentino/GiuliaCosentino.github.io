@@ -97,16 +97,24 @@
                 Cancella
             </button>
         </div>
+        
+        <div id="Modaldraw" class="modaldraw">
+            <span class="close">&times;</span>
+            <img class="modal-contentdraw" id="draw">
+            <div id="caption"></div>
+
+           
+        </div>
 
         <div id="commands" ng-click="maybeLoadShape($event)">
 
 
 
             <ul class="nav nav-tabs">
-                <li>
-                    <h1><span>InvenTools</span></h1>
+                <li class="imglogo">
+                    <img id="logo"src="assets/inventools%20Logo.png">
                 </li>
-                <li class="divider-vertical"></li>
+                  <!--<li class="divider-vertical"></li>-->
 
                 <li><a class="cardname" href="#scenario" data-toggle="tab">SCENARIO</a></li>
                 <li><a class="cardname" href="#personas" data-toggle="tab">PERSONAS</a></li>
@@ -116,14 +124,15 @@
                 <li><a class="cardname" href="#sensors" data-toggle="tab">SENSORS </a></li>
                 <li><a class="cardname" href="#services" data-toggle="tab">SERVICES </a></li>
                 <li><a class="cardname" href="#feedback" data-toggle="tab">FEEDBACK</a></li>
-                <li><a class="cardname" href="#criteria" data-toggle="tab">CRITERIA</a></li>
-                <li class="divider-vertical"></li>
+                <li><a class="cardname" href="#criteria" data-toggle="tab">CRITERIA</a></li> 
+            
+                 <!-- <li class="divider-vertical"></li>-->
 
-                <li><button class="btn btn-info  addbtn"></button></li>
+                <li class="buttup"><button class="btn btn-info  addbtn"></button></li>
 
 
 
-                <li><button class="btn btn-load addbtn" ng-click=""><input type="file"></button></li>
+                <li class="buttup"><button class="btn btn-load addbtn" ng-click=""><input type="file" name="file" id="file" class="inputfile" ><label for="file"></label></button></li>
 
 
                 <!--  <li>
@@ -161,7 +170,7 @@
                 </li>-->
 
 
-                <li><button class="btn btn-save addbtn  dropdown">
+                <li class="buttup"><button class="btn btn-save addbtn  dropdown">
 
                         <div class="dropdown-content">
                             <p id="rasterize" onclick="saveAsFile()"> Save as..</p>
@@ -169,9 +178,9 @@
 
                         </div>
                     </button></li>
-                <li class="divider-vertical"></li>
+                 <!-- <li class="divider-vertical"></li>-->
 
-                <li><button class="btn btn-danger clear addbtn" ng-click="confirmClear()"></button></li>
+                <li class="buttup"><button class="btn btn-danger clear addbtn" ng-click="confirmClear()"></button></li>
 
 
                 <!-- <li>

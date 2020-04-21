@@ -71,6 +71,7 @@ a {
     margin-right: 10% !important;
 
     background-color: white !important;
+    margin-top: 5%;
 
 }
 
@@ -79,9 +80,9 @@ a {
     position: fixed;
     z-index: 1;
     padding-top: 100px;
-    left: 50%;
-    top: 40%;
-    width: 450px;
+    left: 89%;
+    top:40%;
+    width: 400px;
     height: 400px;
     overflow: auto;
     background-color: rgb(0, 0, 0);
@@ -100,8 +101,35 @@ a {
     top: 10%;
 }
 
+.modaldraw {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 50%;
+    top:30%;
+    width: 400px;
+    height: 400px;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: white;
+}
+
+/* Modal Content */
+.modal-contentdraw {
+    background-color: #fefefe;
+    margin: auto;
+    /* padding: 20px; */
+    border: 1px solid #888;
+    width: 60%;
+    position: absolute;
+    left: 20%;
+    top: 10%;
+}
+
 .cardname {
-    margin-top: 20px;
+    top: 25px;
+    position: relative;
 
 }
 
@@ -130,7 +158,7 @@ a {
 }
 
 .divider-vertical {
-    border-left: 3px solid white;
+    border-left: 3px solid #90C8D2;
     height: 50px;
     margin-top: 2px;
     margin-left: 10px;
@@ -169,15 +197,10 @@ a {
 }
 
 .btn-load {
-    background-image: url(../assets/icon/1x/upload.png) !important;
-    border-radius: 50%;
+
     width: 40px;
     height: 40px;
-    background-color: white;
-    background: no-repeat;
-    background-size: 70%;
-    background-position-x: center;
-    background-position-y: center;
+   
 }
 
 #loadFile {
@@ -211,7 +234,8 @@ a {
 
 
 .nav {
-    width: 100% !important;
+    width: 300% !important;
+    background-color: white;
 }
 
 
@@ -279,9 +303,51 @@ a {
 
 
 a.storyboardPlus{
-    background-image: url(../assets/storyboard/plus.png);
+    background-image: url(../assets/icon/+%20aggiungi.png);
     background-size:cover;
     width: 50px;
     height: 50px;
     position: absolute;
+}
+
+#logo{
+    width: 100%;
+    padding: 2%
+}
+.imglogo{
+    width: 200px;
+    margin-right: 1%;
+}
+
+.dist{
+    margin-left: 10%;
+}
+
+.buttup{
+    margin-right: 0.5%;
+    margin-top: 0.2%;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label {
+        right: 12px;
+    bottom: 5px;
+    position: relative;
+    background-image: url(../assets/icon/1x/upload.png) !important;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    background: no-repeat;
+    background-size: 70%;
+    background-position-x: center;
+    background-position-y: center;
+    cursor: pointer; /* "hand" cursor */
 }

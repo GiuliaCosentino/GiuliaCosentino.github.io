@@ -64,13 +64,41 @@ var storyboardImages = [];
 var storyboardPluses = [];
 
 storyboardPluses.push({
-    left: 53,
-    top: 10
+    left: 52,
+    top: 12.5,
+   
 }); //1
 storyboardPluses.push({
-    left: 65,
-    top: 10
+    left: 63.5,
+    top: 12.5
 }); //2
+storyboardPluses.push({
+    left: 52,
+    top: 30,
+   
+}); //3
+storyboardPluses.push({
+    left: 63.5,
+    top:30
+}); //4
+storyboardPluses.push({
+    left: 52,
+    top: 45,
+   
+}); //5
+storyboardPluses.push({
+    left: 63.5,
+    top: 45
+}); //6
+storyboardPluses.push({
+    left: 52,
+    top: 60,
+   
+}); //7
+storyboardPluses.push({
+    left: 63.5,
+    top: 60
+}); //8
 
 
 var view = {};
@@ -163,6 +191,14 @@ function createPluses() {
     $("a.storyboardPlus").on("click", function () {
         var id = $(this).attr("data-index")
         console.log("Hai cliccato il + numero: " + id);
+         $(".modaldraw").css("display", "block");
+        
+        $(".close").on("click", function(){
+ $("modaldraw").css("display", "none");
+});
+        
+        
+        
     });
 
 }
