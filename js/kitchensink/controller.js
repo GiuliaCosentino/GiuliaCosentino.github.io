@@ -64,40 +64,40 @@ var storyboardImages = [];
 var storyboardPluses = [];
 
 storyboardPluses.push({
-    left: 52,
-    top: 12.5,
+    left: 49,
+    top: 13,
    
 }); //1
 storyboardPluses.push({
-    left: 63.5,
-    top: 12.5
+    left: 59,
+    top: 13,
 }); //2
 storyboardPluses.push({
-    left: 52,
-    top: 30,
+    left:49,
+    top: 35,
    
 }); //3
 storyboardPluses.push({
-    left: 63.5,
-    top:30
+    left: 59,
+    top:35,
 }); //4
 storyboardPluses.push({
-    left: 52,
-    top: 45,
+    left: 49,
+    top: 53,
    
 }); //5
 storyboardPluses.push({
-    left: 63.5,
-    top: 45
+    left: 59,
+    top: 53,
 }); //6
 storyboardPluses.push({
-    left: 52,
-    top: 60,
+    left: 49,
+    top: 71,
    
 }); //7
 storyboardPluses.push({
-    left: 63.5,
-    top: 60
+    left: 59,
+    top: 71,
 }); //8
 
 
