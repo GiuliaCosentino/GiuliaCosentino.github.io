@@ -194,7 +194,7 @@ function createPluses() {
          $(".modaldraw").css("display", "block");
         
         $(".close").on("click", function(){
- $("modaldraw").css("display", "none");
+ $(".modaldraw").css("display", "none");
 });
         
         
@@ -221,6 +221,16 @@ function createCards() {
 
         view[key].append(el);
     }
+    
+      $(".btn-info").on("click", function(){
+ $(".modalinfo").css("display", "block");
+});
+   
+       $(".close").on("click", function(){
+ $(".modalinfo").css("display", "none");
+});
+   
+    
 
     $(".card").on("click", function (e) {
         var index = $(this).attr("data-index");

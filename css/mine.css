@@ -81,7 +81,7 @@ a {
     z-index: 1;
     padding-top: 100px;
     left: 89%;
-    top:40%;
+    top: 40%;
     width: 400px;
     height: 400px;
     overflow: auto;
@@ -107,7 +107,7 @@ a {
     z-index: 1;
     padding-top: 100px;
     left: 50%;
-    top:30%;
+    top: 30%;
     width: 400px;
     height: 400px;
     overflow: auto;
@@ -117,6 +117,33 @@ a {
 
 /* Modal Content */
 .modal-contentdraw {
+    background-color: #fefefe;
+    margin: auto;
+    /* padding: 20px; */
+    border: 1px solid #888;
+    width: 60%;
+    position: absolute;
+    left: 20%;
+    top: 10%;
+}
+
+.modalinfo {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    padding-top: 100px;
+    left: 10%;
+    top: 10%;
+    margin: auto;
+    width: 80%;
+    height: 60%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: white;
+}
+
+/* Modal Content */
+.modal-contentinfo {
     background-color: #fefefe;
     margin: auto;
     /* padding: 20px; */
@@ -200,7 +227,7 @@ a {
 
     width: 40px;
     height: 40px;
-   
+
 }
 
 #loadFile {
@@ -259,7 +286,7 @@ a {
     line-height: 14px;
 }
 
-.nav-tabs li a{
+.nav-tabs li a {
     font-size: 1vw;
 }
 
@@ -302,42 +329,44 @@ a {
 }
 
 
-a.storyboardPlus{
+a.storyboardPlus {
     background-image: url(../assets/icon/+%20aggiungi.png);
-    background-size:cover;
+    background-size: cover;
     width: 50px;
     height: 50px;
     position: absolute;
 }
 
-#logo{
+#logo {
     width: 100%;
     padding: 2%
 }
-.imglogo{
+
+.imglogo {
     width: 200px;
     margin-right: 1%;
 }
 
-.dist{
+.dist {
     margin-left: 10%;
 }
 
-.buttup{
+.buttup {
     margin-right: 0.5%;
     margin-top: 0.2%;
 }
 
 .inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
 }
+
 .inputfile + label {
-        right: 12px;
+    right: 12px;
     bottom: 5px;
     position: relative;
     background-image: url(../assets/icon/1x/upload.png) !important;
@@ -349,5 +378,6 @@ a.storyboardPlus{
     background-size: 70%;
     background-position-x: center;
     background-position-y: center;
-    cursor: pointer; /* "hand" cursor */
+    cursor: pointer;
+    /* "hand" cursor */
 }
