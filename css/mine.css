@@ -230,10 +230,6 @@ a {
 
 }
 
-#loadFile {
-    display: none;
-}
-
 .btn-save {
     background-image: url(../assets/icon/1x/dowload.png) !important;
     border-radius: 50%;
@@ -382,79 +378,124 @@ a.storyboardPlus {
     /* "hand" cursor */
 }
 
-#title{
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.custom-file-input::before {
+    content: '';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    background-image: url(../assets/icon/1x/upload.png) !important;
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+
+.custom-file-input:hover::before {
+    border-color: black;
+}
+
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+#title {
     text-align: center;
     font-size: 30px;
     font-weight: 500;
 }
-#texttitle{
-padding-left: 3%;
+
+#texttitle {
+    padding-left: 3%;
     padding-top: 3%;
     font-size: 20px;
 }
-#textparagraph{
-padding-left: 3%;
+
+#textparagraph {
+    padding-left: 3%;
     padding-top: 1%;
-    font-size:18px;
+    font-size: 18px;
 }
 
-#time{
-padding-left: 3%;
+#time {
+    padding-left: 3%;
     padding-top: 1%;
-    font-size:16px;
+    font-size: 16px;
     text-decoration: underline;
 }
 
-#stepsbutton{
-padding-left: 3%;
-   position: absolute;
-    top:80%;
-    font-size:20px;
+#stepsbutton {
+    padding-left: 3%;
+    position: absolute;
+    top: 80%;
+    font-size: 20px;
     font-weight: 600;
-   
+
 }
 
 
 .table {
-	display: table;
-	table-layout:fixed;
-	width: 100%;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
 }
+
 .tableCell {
-	display: table-cell;
-	text-align: center;
+    display: table-cell;
+    text-align: center;
 }
-.bulletWrap { position: relative; }
-.bulletWrap .before, .bulletWrap .after {
+
+.bulletWrap {
+    position: relative;
+}
+
+.bulletWrap .before,
+.bulletWrap .after {
     position: absolute;
     content: "";
     top: 0;
     left: 0;
     top: 50%;
-   
-       border: 2px dashed;
+
+    border: 2px dashed;
     width: 100%;
-	z-index: -1;
+    z-index: -1;
 }
-.bulletWrap .after { width:50%; background: #2c495e; }
+
+.bulletWrap .after {
+    width: 50%;
+    background: #2c495e;
+}
+
 .slide a {
-	width: 30px;
-	height: 30px;
-	background: white;
-	color: #2c495e;
-	display: inline-block;
-	border-radius: 100%;
-	border: 4px solid #2c495e;
-	transition: 0.3s all ease;
-	position: relative;
+    width: 30px;
+    height: 30px;
+    background: white;
+    color: #2c495e;
+    display: inline-block;
+    border-radius: 100%;
+    border: 4px solid #2c495e;
+    transition: 0.3s all ease;
+    position: relative;
 }
-.slide a.active, .slide a:hover {
-	background: #2c495e;
-	border-color: #2c495e;
+
+.slide a.active,
+.slide a:hover {
+    background: #2c495e;
+    border-color: #2c495e;
     color: white;
 }
+
 .slide a i {
-	font-size: 25px;
-	line-height: 30px;
+    font-size: 25px;
+    line-height: 30px;
     font-style: normal;
 }

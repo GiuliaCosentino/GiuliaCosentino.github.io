@@ -97,99 +97,102 @@
                 Cancella
             </button>
         </div>
-        
+
         <div id="Modaldraw" class="modaldraw">
             <span class="close">&times;</span>
             <img class="modal-contentdraw" id="draw">
             <div id="caption"></div>
 
-           
-        </div>
-        
-           <div id="Modalinfo" class="modalinfo">
-            <span class="close">&times;</span>
-           
-            <div id="title"> INSTRUCTIONS
-           </div>
-               <div id="step1">
-                 <div id="texttitle"> 1.Start by selecting a persona and a scenario that you have agreed to focus on
-           </div>
-                    <div id="textparagraph"> Start by selecting a persona and a scenario that you have agreed to focus on
-           </div>
-               
-               <div id="time"> Approx 5 minutes
-           </div></div>
-               
-               <div id="step2">
-                 <div id="texttitle"> 2.Start by selecting a persona and a scenario that you have agreed to focus on
-           </div>
-                    <div id="textparagraph"> Start by selecting a persona and a scenario that you have agreed to focus on
-           </div>
-               
-               <div id="time"> Approx 10 minutes
-           </div></div>
-               
-               <div id="stepsbutton">  STEPS
-                   <div class="bulletWrap">
-	<div class="before"></div>
-	<div class="after"></div>
-	<div class="bulletTrack table">
-		<div class="slide tableCell">
-			<a class="active" class="" href=""><i class="fa fa-user">1</i></a>
-		</div>
-		<div class="slide tableCell">
-			<a href=""><i class="fa fa-user">2</i></a>
-		</div>
-		<div class="slide tableCell">
-			<a   href=""><i class="fa fa-user">3</i></a>
-		</div>
-		<div class="slide tableCell">
-			<a href=""><i class="fa fa-user">4</i></a>
-		</div>
-		<div class="slide tableCell">
-			<a class="" href=""><i class="fa fa-user">5</i></a>
-		</div>
-		<div class="slide tableCell">
-			<a href=""><i class="fa fa-user">6</i></a>
-		</div>
-        <div class="slide tableCell">
-			<a href=""><i class="fa fa-user">7</i></a>
-		</div>
-	</div>
-</div>
-                   
-               </div>
 
-           
+        </div>
+
+        <div id="Modalinfo" class="modalinfo">
+            <span class="close">&times;</span>
+
+            <div id="title"> INSTRUCTIONS
+            </div>
+            <div id="step1">
+                <div id="texttitle"> 1.Start by selecting a persona and a scenario that you have agreed to focus on
+                </div>
+                <div id="textparagraph"> Start by selecting a persona and a scenario that you have agreed to focus on
+                </div>
+
+                <div id="time"> Approx 5 minutes
+                </div>
+            </div>
+
+            <div id="step2">
+                <div id="texttitle"> 2.Start by selecting a persona and a scenario that you have agreed to focus on
+                </div>
+                <div id="textparagraph"> Start by selecting a persona and a scenario that you have agreed to focus on
+                </div>
+
+                <div id="time"> Approx 10 minutes
+                </div>
+            </div>
+
+            <div id="stepsbutton"> STEPS
+                <div class="bulletWrap">
+                    <div class="before"></div>
+                    <div class="after"></div>
+                    <div class="bulletTrack table">
+                        <div class="slide tableCell">
+                            <a class="active" class="" href=""><i class="fa fa-user">1</i></a>
+                        </div>
+                        <div class="slide tableCell">
+                            <a href=""><i class="fa fa-user">2</i></a>
+                        </div>
+                        <div class="slide tableCell">
+                            <a href=""><i class="fa fa-user">3</i></a>
+                        </div>
+                        <div class="slide tableCell">
+                            <a href=""><i class="fa fa-user">4</i></a>
+                        </div>
+                        <div class="slide tableCell">
+                            <a class="" href=""><i class="fa fa-user">5</i></a>
+                        </div>
+                        <div class="slide tableCell">
+                            <a href=""><i class="fa fa-user">6</i></a>
+                        </div>
+                        <div class="slide tableCell">
+                            <a href=""><i class="fa fa-user">7</i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
         </div>
 
         <div id="commands" ng-click="maybeLoadShape($event)">
-
-
-
+            
+            
             <ul class="nav nav-tabs">
                 <li class="imglogo">
-                    <img id="logo"src="assets/inventools%20Logo.png">
+                    <img id="logo" src="assets/inventools%20Logo.png">
                 </li>
-                  <!--<li class="divider-vertical"></li>-->
+                <!--<li class="divider-vertical"></li>-->
 
                 <li><a class="cardname" href="#scenario" data-toggle="tab">SCENARIO</a></li>
                 <li><a class="cardname" href="#personas" data-toggle="tab">PERSONAS</a></li>
                 <li><a class="cardname" href="#missions" data-toggle="tab">MISSIONS</a></li>
                 <li><a class="cardname" href="#things" data-toggle="tab">THINGS</a></li>
-                <li><a class="cardname" href="#humanactions" data-toggle="tab">HUMAN ACTIONS </a></li>
+                <li><a class="cardname" href="#humanactions" data-toggle="tab">HUMAN ACTIONS</a></li>
                 <li><a class="cardname" href="#sensors" data-toggle="tab">SENSORS </a></li>
                 <li><a class="cardname" href="#services" data-toggle="tab">SERVICES </a></li>
                 <li><a class="cardname" href="#feedback" data-toggle="tab">FEEDBACK</a></li>
-                <li><a class="cardname" href="#criteria" data-toggle="tab">CRITERIA</a></li> 
-            
-                 <!-- <li class="divider-vertical"></li>-->
+                <li><a class="cardname" href="#criteria" data-toggle="tab">CRITERIA</a></li>
 
-                <li class="buttup"><button class="btn btn-info  addbtn"></button></li>
+                <!-- <li class="divider-vertical"></li>-->
 
+                <li class="buttup"><button class="btn btn-info addbtn"></button></li>
 
-
-                <li class="buttup"><button class="btn btn-load addbtn" ng-click=""><input type="file" name="file" id="file" class="inputfile" ><label for="file"></label></button></li>
+                <li class="buttup">
+                    <!--<a  ng-click="">-->
+                    <input type="file" name="file" id="loadFile" class="custom-file-input">
+                    <label for="file"></label>                    
+                </li>
 
 
                 <!--  <li>
@@ -230,12 +233,12 @@
                 <li class="buttup"><button class="btn btn-save addbtn  dropdown">
 
                         <div class="dropdown-content">
-                            <p id="rasterize" onclick="saveAsFile()"> Save as..</p>
-                            <p id="rasterize" onclick="exportImage()"> Export</p>
+                            <p id="rasterize" onclick="saveAsFile()">Save</p>
+                            <p id="rasterize" onclick="exportImage()">Export image</p>
 
                         </div>
                     </button></li>
-                 <!-- <li class="divider-vertical"></li>-->
+                <!-- <li class="divider-vertical"></li>-->
 
                 <li class="buttup"><button class="btn btn-danger clear addbtn" ng-click="confirmClear()"></button></li>
 

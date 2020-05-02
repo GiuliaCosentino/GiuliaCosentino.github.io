@@ -64,27 +64,27 @@ var storyboardImages = [];
 var storyboardPluses = [];
 
 storyboardPluses.push({
-    left: 49,
-    top: 13,
-   
+    left: 44.5,
+    top: 16,
+
 }); //1
 storyboardPluses.push({
-    left: 59,
-    top: 13,
+    left: 54.5,
+    top: 16,
 }); //2
 storyboardPluses.push({
-    left:49,
+    left: 49,
     top: 35,
-   
+
 }); //3
 storyboardPluses.push({
     left: 59,
-    top:35,
+    top: 35,
 }); //4
 storyboardPluses.push({
     left: 49,
     top: 53,
-   
+
 }); //5
 storyboardPluses.push({
     left: 59,
@@ -93,7 +93,7 @@ storyboardPluses.push({
 storyboardPluses.push({
     left: 49,
     top: 71,
-   
+
 }); //7
 storyboardPluses.push({
     left: 59,
@@ -104,6 +104,13 @@ storyboardPluses.push({
 var view = {};
 
 var headerheight = 100;
+
+//resize in base alla pagina
+//var imposed_height = window.innerHeight - headerheight;;
+//var imposed_width = window.innerWidth;;
+
+var imposed_height = 847;
+var imposed_width = 1920;
 
 $(document).ready(function () {
 
@@ -139,26 +146,29 @@ $(window).resize(function () {
 });
 
 function resize() {
+
+
     view["canvas-container"].css({
-        width: window.innerWidth + "px",
-        height: (window.innerHeight - headerheight) + "px"
+        width: imposed_width + "px",
+        height: imposed_height + "px"
     });
-    view["canvas-container"].attr("width", window.innerWidth);
-    view["canvas-container"].attr("height", window.innerHeight - headerheight);
+    view["canvas-container"].attr("width", imposed_width);
+    view["canvas-container"].attr("height", imposed_height);
 
     view["lower-canvas"].css({
-        width: window.innerWidth + "px",
-        height: (window.innerHeight - headerheight) + "px"
+        width: imposed_width + "px",
+        height: imposed_height + "px"
     });
-    view["lower-canvas"].attr("width", window.innerWidth);
-    view["lower-canvas"].attr("height", window.innerHeight - headerheight);
+    view["lower-canvas"].attr("width", imposed_width);
+    view["lower-canvas"].attr("height", imposed_height);
 
     view["upper-canvas"].css({
-        width: window.innerWidth + "px",
-        height: (window.innerHeight - headerheight) + "px"
+        width: imposed_width + "px",
+        height: imposed_height + "px"
     });
-    view["upper-canvas"].attr("width", window.innerWidth);
-    view["upper-canvas"].attr("height", window.innerHeight - headerheight);
+    view["upper-canvas"].attr("width", imposed_width);
+    view["upper-canvas"].attr("height", imposed_height);
+
 }
 
 function showInfo(src) {
@@ -181,8 +191,8 @@ function createPluses() {
 
     var el = "";
     for (n in storyboardPluses) {
-        var left = storyboardPluses[n].left * window.innerWidth / 100;
-        var top = storyboardPluses[n].top * window.innerHeight / 100;
+        var left = storyboardPluses[n].left * imposed_width / 100;
+        var top = storyboardPluses[n].top * imposed_height / 100;
         el += '<a class="storyboardPlus" data-index="' + n + '" style="left:' + left + 'px; top:' + top + 'px"></button>';
     }
 
@@ -191,14 +201,14 @@ function createPluses() {
     $("a.storyboardPlus").on("click", function () {
         var id = $(this).attr("data-index")
         console.log("Hai cliccato il + numero: " + id);
-         $(".modaldraw").css("display", "block");
-        
-        $(".close").on("click", function(){
- $(".modaldraw").css("display", "none");
-});
-        
-        
-        
+        $(".modaldraw").css("display", "block");
+
+        $(".close").on("click", function () {
+            $(".modaldraw").css("display", "none");
+        });
+
+
+
     });
 
 }
@@ -221,16 +231,16 @@ function createCards() {
 
         view[key].append(el);
     }
-    
-      $(".btn-info").on("click", function(){
- $(".modalinfo").css("display", "block");
-});
-   
-       $(".close").on("click", function(){
- $(".modalinfo").css("display", "none");
-});
-   
-    
+
+    $(".btn-info").on("click", function () {
+        $(".modalinfo").css("display", "block");
+    });
+
+    $(".close").on("click", function () {
+        $(".modalinfo").css("display", "none");
+    });
+
+
 
     $(".card").on("click", function (e) {
         var index = $(this).attr("data-index");
@@ -821,6 +831,7 @@ function addAccessors($scope) {
     $scope.confirmClear = function () {
         if (confirm('Are you sure?')) {
             canvas.clear();
+            location.reload();
         }
     };
 
