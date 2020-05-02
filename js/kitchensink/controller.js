@@ -60,6 +60,7 @@ cards.criteria = {
 
 var storyboardImages = [];
 
+var UserStoryboardImages = {};
 
 var storyboardPluses = [];
 
@@ -109,8 +110,8 @@ var headerheight = 100;
 //var imposed_height = window.innerHeight - headerheight;;
 //var imposed_width = window.innerWidth;;
 
-var imposed_height = 847;
-var imposed_width = 1920;
+var imposed_height = 820; //scegli quanto vuoi
+var imposed_width = 1920 / 847 * imposed_height; //non toccare mai
 
 $(document).ready(function () {
 
@@ -131,13 +132,19 @@ $(document).ready(function () {
             src.lastIndexOf("/") + 1,
             src.lastIndexOf(".")
         );
-        showInfo(src);
+        if (id.startsWith("cards")) {
+            showInfo(src);
+        }
+
     });
-
-
 
     resize();
 
+    $(".buttonInfoStep").on("click", function () {
+        var step = $(this).attr("data-step");
+        $(".InfoStep").hide();
+        $("#step" + step).show();
+    });
 
 });
 
@@ -199,17 +206,48 @@ function createPluses() {
     view["canvas-container"].append(el);
 
     $("a.storyboardPlus").on("click", function () {
-        var id = $(this).attr("data-index")
+        var id = $(this).attr("data-index");
         console.log("Hai cliccato il + numero: " + id);
-        $(".modaldraw").css("display", "block");
+
+
+        if ($(this).hasClass("removeImage")) {
+            console.log("elemento da rimuovere");
+            $(this).removeClass("removeImage");
+            var elementToRemove = UserStoryboardImages[id];
+            var elementsToRemove = [];
+            elementsToRemove.push(elementToRemove);
+            canvas.remove.apply(canvas, elementsToRemove);
+            //canvas.remove.apply(canvas, activeObjects);
+        } else {
+            window.storyboardplusclicked = id;
+            $(".modaldraw").show();
+        }
 
         $(".close").on("click", function () {
-            $(".modaldraw").css("display", "none");
+            $(".modaldraw").hide();
         });
 
 
-
     });
+
+
+    $("#StoryBoardImageToUpload").change(function () {
+        if (this.files && this.files[0]) {
+            var img = document.querySelector('img'); // $('img')[0]
+            img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+            img.onload = StoryBoardImageLoaded;
+        }
+        $("#StoryBoardImageToUpload").val("");
+    });
+
+    function StoryBoardImageLoaded() {
+        if (window.storyboardplusclicked != null) {
+            $(".modaldraw").hide();
+            addImageToStoryBoardPlus(this.src);
+        }
+
+
+    }
 
 }
 
@@ -324,6 +362,41 @@ function addImage(index, key) {
 };
 
 
+function addImageToStoryBoardPlus(url) {
+    var id = window.storyboardplusclicked;
+
+    window.storyboardplusclicked = null;
+
+    console.log("Aggiungo l'immagine allo story board plus numero " + id + " che ha posizione: ", storyboardPluses[id]);
+
+    var left = (imposed_width * storyboardPluses[id].left / 100) - 60;
+    var top = (imposed_height * storyboardPluses[id].top / 100) - 60;
+
+    fabric.Image.fromURL(url, function (image) {
+
+        image.set({
+                left: left,
+                top: top,
+                angle: 0,
+                hasControls: false,
+                selectable: false
+            })
+            .setCoords();
+
+        image.scaleToWidth(155);
+        image.scaleToHeight(155);
+
+        //console.log(image);
+
+        UserStoryboardImages[id] = image;
+
+        canvas.add(image);
+    });
+
+    $(".storyboardPlus[data-index=" + id + "]").addClass("removeImage");
+
+};
+
 
 
 
@@ -349,8 +422,8 @@ function exportImage() {
 
     var img = document.createElement('img');
     var bgcontext = bgcanvas.getContext("2d");
-    var width = cardscanvas.width;
-    var height = cardscanvas.height;
+    var width = imposed_width; //cardscanvas.width;
+    var height = imposed_height; //cardscanvas.height;
 
     totalcanvas.width = width;
     totalcanvas.height = height;
@@ -373,7 +446,7 @@ function exportImage() {
             document.body.appendChild(a)
             a.click();
             document.body.removeChild(a);
-        });
+        }, 'image/png', 1);
 
 
     };

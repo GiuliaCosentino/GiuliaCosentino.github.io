@@ -102,7 +102,7 @@
             <span class="close">&times;</span>
             <img class="modal-contentdraw" id="draw">
             <div id="caption"></div>
-
+            <input type="file" id="StoryBoardImageToUpload">
 
         </div>
 
@@ -111,7 +111,7 @@
 
             <div id="title"> INSTRUCTIONS
             </div>
-            <div id="step1">
+            <div class="InfoStep" id="step1">
                 <div id="texttitle"> 1.Start by selecting a persona and a scenario that you have agreed to focus on
                 </div>
                 <div id="textparagraph"> Start by selecting a persona and a scenario that you have agreed to focus on
@@ -121,7 +121,7 @@
                 </div>
             </div>
 
-            <div id="step2">
+            <div class="InfoStep" id="step2">
                 <div id="texttitle"> 2.Start by selecting a persona and a scenario that you have agreed to focus on
                 </div>
                 <div id="textparagraph"> Start by selecting a persona and a scenario that you have agreed to focus on
@@ -136,19 +136,20 @@
                     <div class="before"></div>
                     <div class="after"></div>
                     <div class="bulletTrack table">
-                        <div class="slide tableCell">
+                        <div class="slide tableCell buttonInfoStep" data-step="1"> 
+                            
                             <a class="active" class="" href=""><i class="fa fa-user">1</i></a>
                         </div>
-                        <div class="slide tableCell">
+                        <div class="slide tableCell buttonInfoStep" data-step="2">
                             <a href=""><i class="fa fa-user">2</i></a>
                         </div>
-                        <div class="slide tableCell">
+                        <div class="slide tableCell buttonInfoStep">
                             <a href=""><i class="fa fa-user">3</i></a>
                         </div>
-                        <div class="slide tableCell">
+                        <div class="slide tableCell buttonInfoStep">
                             <a href=""><i class="fa fa-user">4</i></a>
                         </div>
-                        <div class="slide tableCell">
+                        <div class="slide tableCell buttonInfoStep">
                             <a class="" href=""><i class="fa fa-user">5</i></a>
                         </div>
                         <div class="slide tableCell">
@@ -166,8 +167,8 @@
         </div>
 
         <div id="commands" ng-click="maybeLoadShape($event)">
-            
-            
+
+
             <ul class="nav nav-tabs">
                 <li class="imglogo">
                     <img id="logo" src="assets/inventools%20Logo.png">
@@ -191,7 +192,7 @@
                 <li class="buttup">
                     <!--<a  ng-click="">-->
                     <input type="file" name="file" id="loadFile" class="custom-file-input">
-                    <label for="file"></label>                    
+                    <label for="file"></label>
                 </li>
 
 

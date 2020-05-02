@@ -333,6 +333,17 @@ a.storyboardPlus {
     position: absolute;
 }
 
+a.storyboardPlus.removeImage {
+    background-image: url(../assets/icon/x%%20elimina.png);
+    background-size: cover;
+    opacity: 0.3;
+    background-color: red;
+    margin-left: 80px;
+    margin-top: -50px;
+    width: 30px;
+    height: 30px;
+}
+
 #logo {
     width: 100%;
     padding: 2%
