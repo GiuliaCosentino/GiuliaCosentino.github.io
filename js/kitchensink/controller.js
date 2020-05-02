@@ -267,6 +267,7 @@ function createCards() {
         $("ul.nav li a").css("color", "#2C495E");
         $(".tab-content").css("background-color", "white");
         $(".tab-content").css("padding", "2%");
+        $(".modal").css("display", "none");
         var key = $(this).attr("href").replace("#", "");
         var ourdiv = $("div#" + key);
 
@@ -311,6 +312,9 @@ function addImage(index, key) {
         canvas.add(image);
     });
 };
+
+
+
 
 
 
