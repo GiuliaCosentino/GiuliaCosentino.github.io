@@ -84,6 +84,7 @@
 
         <div id="canvas-wrapper">
             <canvas class="center" id="canvas" width="1640" height="900" margin-bottom="2%"></canvas>
+             <div class="textinsert"> <button class="btn btn-textinsert addbtn" ng-click="addTextbox()"></button></div>
         </div>
 
 
@@ -130,34 +131,92 @@
                 <div id="time"> Approx 10 minutes
                 </div>
             </div>
+            
+              <div class="InfoStep" id="step3">
+                <div id="texttitle"> 3.Start by selecting a persona and a scenario that you have agreed to focus on
+                </div>
+                <div id="textparagraph"> Start by selecting a persona and a scenario that you have agreed to focus on
+                </div>
+
+                <div id="time"> Approx 10 minutes
+                </div>
+            </div>
+            
+              <div class="InfoStep" id="step4">
+                <div id="texttitle"> 4.Start by selecting a persona and a scenario that you have agreed to focus on
+                </div>
+                <div id="textparagraph"> Start by selecting a persona and a scenario that you have agreed to focus on
+                </div>
+
+                <div id="time"> Approx 10 minutes
+                </div>
+            </div>
+            
+              <div class="InfoStep" id="step5">
+                <div id="texttitle"> 5.Start by selecting a persona and a scenario that you have agreed to focus on
+                </div>
+                <div id="textparagraph"> Start by selecting a persona and a scenario that you have agreed to focus on
+                </div>
+
+                <div id="time"> Approx 10 minutes
+                </div>
+            </div>
+            
+              <div class="InfoStep" id="step6">
+                <div id="texttitle"> 6.Start by selecting a persona and a scenario that you have agreed to focus on
+                </div>
+                <div id="textparagraph"> Start by selecting a persona and a scenario that you have agreed to focus on
+                </div>
+
+                <div id="time"> Approx 10 minutes
+                </div>
+            </div>
+            
+              <div class="InfoStep" id="step7">
+                <div id="texttitle"> 7.Start by selecting a persona and a scenario that you have agreed to focus on
+                </div>
+                <div id="textparagraph"> Start by selecting a persona and a scenario that you have agreed to focus on
+                </div>
+
+                <div id="time"> Approx 10 minutes
+                </div>
+            </div>
 
             <div id="stepsbutton"> STEPS
                 <div class="bulletWrap">
                     <div class="before"></div>
                     <div class="after"></div>
                     <div class="bulletTrack table">
+                        
                         <div class="slide tableCell buttonInfoStep" data-step="1"> 
                             
                             <a class="active" class="" href=""><i class="fa fa-user">1</i></a>
                         </div>
+                        
                         <div class="slide tableCell buttonInfoStep" data-step="2">
                             <a href=""><i class="fa fa-user">2</i></a>
                         </div>
-                        <div class="slide tableCell buttonInfoStep">
+                        
+                        <div class="slide tableCell buttonInfoStep" data-step="3">
                             <a href=""><i class="fa fa-user">3</i></a>
                         </div>
-                        <div class="slide tableCell buttonInfoStep">
+                        
+                        <div class="slide tableCell buttonInfoStep" data-step="4">
                             <a href=""><i class="fa fa-user">4</i></a>
                         </div>
-                        <div class="slide tableCell buttonInfoStep">
+                        
+                        <div class="slide tableCell buttonInfoStep" data-step="5">
                             <a class="" href=""><i class="fa fa-user">5</i></a>
                         </div>
-                        <div class="slide tableCell">
+                        
+                        <div class="slide tableCell buttonInfoStep" data-step="6">
                             <a href=""><i class="fa fa-user">6</i></a>
                         </div>
-                        <div class="slide tableCell">
+                        
+                        <div class="slide tableCell buttonInfoStep" data-step="7">
                             <a href=""><i class="fa fa-user">7</i></a>
                         </div>
+                        
                     </div>
                 </div>
 
@@ -165,6 +224,8 @@
 
 
         </div>
+        
+       
 
         <div id="commands" ng-click="maybeLoadShape($event)">
 
@@ -191,9 +252,14 @@
 
                 <li class="buttup">
                     <!--<a  ng-click="">-->
-                    <input type="file" name="file" id="loadFile" class="custom-file-input">
-                    <label for="file"></label>
+                  
+                   <div class=" buttup upload-btn-wrapper ">
+  <button class="btn btn-upload"></button>
+  <input type="file" name="myfile" id="loadFile"/>
+</div>
                 </li>
+                
+               
 
 
                 <!--  <li>

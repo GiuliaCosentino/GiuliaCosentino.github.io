@@ -253,6 +253,20 @@ a {
     background-position-x: center;
     background-position-y: center;
 }
+.btn-textinsert {
+   background-image: url(../assets/icon/+%20aggiungi.png) !important;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    background: no-repeat;
+    background-size: 80%;
+    background-position-x: center;
+    background-position-y: center;
+    position: absolute;
+   left: 72%;
+    top: 60%;
+}
 
 
 
@@ -378,6 +392,7 @@ a.storyboardPlus.removeImage {
     position: relative;
     background-image: url(../assets/icon/1x/upload.png) !important;
     border-radius: 50%;
+    border: 1px solid #999;
     width: 40px;
     height: 40px;
     background-color: white;
@@ -386,11 +401,51 @@ a.storyboardPlus.removeImage {
     background-position-x: center;
     background-position-y: center;
     cursor: pointer;
+     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     /* "hand" cursor */
 }
 
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+    cursor: pointer;
+}
+.upload-btn-wrapper input[type=file]:hover {
+ box-shadow: 1px 1px 5px 0px #555555ab;
+}
+
 .custom-file-input::-webkit-file-upload-button {
-    visibility: hidden;
+    visibility: hidden !important;
+}
+
+.btn-upload{
+    margin-top: 5%;
+    background-image: url(../assets/icon/1x/upload.png) !important;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    background: no-repeat;
+    background-size: 70%;
+    background-position-x: center;
+    background-position-y: center;
+    cursor: pointer;
+}
+
+.btn-upload:hover{
+    
+    box-shadow: 1px 1px 5px 0px #555555ab;
 }
 
 .custom-file-input::before {
@@ -398,9 +453,18 @@ a.storyboardPlus.removeImage {
     display: inline-block;
     background: linear-gradient(top, #f9f9f9, #e3e3e3);
     background-image: url(../assets/icon/1x/upload.png) !important;
+    background-repeat: no-repeat;
+  
+        background-size: 70%;
+    background-position-x: center;
+    background-position-y: center;
+        top: 15%;
+    position: absolute;
+    width: 10px;
+    height: 10px;
     border: 1px solid #999;
-    border-radius: 3px;
-    padding: 5px 8px;
+    border-radius: 30px;
+    padding: 15px 15px;
     outline: none;
     white-space: nowrap;
     -webkit-user-select: none;
@@ -408,15 +472,25 @@ a.storyboardPlus.removeImage {
     text-shadow: 1px 1px #fff;
     font-weight: 700;
     font-size: 10pt;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
 
+select, input[type="file"] {
+    height: 40px;
+    *: ;
+    margin-top: 4px;
+    line-height: 30px;}
+
 .custom-file-input:hover::before {
-    border-color: black;
+  
+    box-shadow: 1px 1px 5px 0px #555555ab;
 }
 
 .custom-file-input:active::before {
     background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
+
+
 
 #title {
     text-align: center;
@@ -452,6 +526,10 @@ a.storyboardPlus.removeImage {
 
 }
 
+.InfoStep{
+    display: none;
+}
+
 
 .table {
     display: table;
@@ -482,7 +560,7 @@ a.storyboardPlus.removeImage {
 }
 
 .bulletWrap .after {
-    width: 50%;
+    width: 10%;
     background: #2c495e;
 }
 
@@ -503,6 +581,7 @@ a.storyboardPlus.removeImage {
     background: #2c495e;
     border-color: #2c495e;
     color: white;
+    text-decoration: none !important;
 }
 
 .slide a i {

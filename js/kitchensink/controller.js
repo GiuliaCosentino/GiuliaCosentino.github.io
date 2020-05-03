@@ -74,31 +74,31 @@ storyboardPluses.push({
     top: 16,
 }); //2
 storyboardPluses.push({
-    left: 49,
-    top: 35,
+    left: 44.5,
+    top: 38,
 
 }); //3
 storyboardPluses.push({
-    left: 59,
-    top: 35,
+    left: 54.5,
+    top: 38,
 }); //4
 storyboardPluses.push({
-    left: 49,
-    top: 53,
+    left: 44.5,
+    top: 60,
 
 }); //5
 storyboardPluses.push({
-    left: 59,
-    top: 53,
+    left: 54.5,
+    top: 60,
 }); //6
 storyboardPluses.push({
-    left: 49,
-    top: 71,
+    left: 44.5,
+    top: 82,
 
 }); //7
 storyboardPluses.push({
-    left: 59,
-    top: 71,
+    left: 54.5,
+    top: 82,
 }); //8
 
 
@@ -145,6 +145,22 @@ $(document).ready(function () {
         $(".InfoStep").hide();
         $("#step" + step).show();
     });
+    
+    function initProgress(){
+	var activeDist = $(".slide a.active").position();
+	activeDist = activeDist.left;
+	$(".after").stop().animate({width: activeDist + "px"});
+}
+initProgress();
+$("a").click(function(e){
+	e.preventDefault();
+	$(".slide a").removeClass("active");
+	$(this).addClass("active");
+	initProgress();
+});
+$(window).resize(function(){
+	initProgress();	
+});
 
 });
 
@@ -813,21 +829,19 @@ function addAccessors($scope) {
     };
 
     $scope.addTextbox = function () {
-        var text = 'Lorem ipsum dolor sit amet,\nconsectetur adipisicing elit,\nsed do eiusmod tempor incididunt\nut labore et dolore magna aliqua.\n' +
-            'Ut enim ad minim veniam,\nquis nostrud exercitation ullamco\nlaboris nisi ut aliquip ex ea commodo consequat.';
+        var text = 'Iserisci il testo qui';
 
+        
         var textSample = new fabric.Textbox(text.slice(0, getRandomInt(0, text.length)), {
             fontSize: 20,
-            left: getRandomInt(350, 400),
-            top: getRandomInt(350, 400),
-            fontFamily: 'Nunito',
-            angle: getRandomInt(-10, 10),
-            fill: '#' + getRandomColor(),
+            left: 1200,
+            top: 400,
+            fontFamily: 'Inconsolata',
             fontWeight: '',
             originX: 'left',
             width: 300,
-            hasRotatingPoint: true,
-            centerTransform: true
+            hasRotatingPoint: false,
+            centerTransform: false
         });
 
         canvas.add(textSample);
