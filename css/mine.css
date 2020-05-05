@@ -364,12 +364,11 @@ a {
 
 .storyboardPlus .button_storyboardPlus{
     background-image: url(../assets/icon/+%20aggiungi.png);
-    background-size: cover;
+ 
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    background-color: white;
-    background: no-repeat;
+   
     background-size: 70%;
     background-position-x: center;
     background-position-y: center;
