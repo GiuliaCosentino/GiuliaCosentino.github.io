@@ -265,7 +265,7 @@ a {
     background-position-x: center;
     background-position-y: center;
     position: absolute;
-   left: 72%;
+   left: 85%;
     top: 60%;
 }
 
@@ -376,18 +376,16 @@ a {
 .storyboardPlus .removeStoryboardImage{
     background-image: url(../assets/icon/cancella@4x.png);
     background-size: cover;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    background: no-repeat;
-    background-size: 70%;
+    width: 30px;
+    height: 30px;
+    background-size: 100%;
     background-position-x: center;
     background-position-y: center;
     position: absolute;
     z-index: 99999;
-    background-color: red;
-    opacity: 0;  
+    opacity: 0; 
+    right: 10%;
+    top:2%;
     
 }
 
