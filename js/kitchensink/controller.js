@@ -216,7 +216,7 @@ function createPluses() {
     for (n in storyboardPluses) {
         var left = storyboardPluses[n].left * imposed_width / 100;
         var top = storyboardPluses[n].top * imposed_height / 100;
-        el += '<a class="storyboardPlus" data-index="' + n + '" style="left:' + left + 'px; top:' + top + 'px"></button>';
+        el += '<a class="storyboardPlus" data-index="' + n + '" style="left:' + left + 'px; top:' + top + 'px"></a>';
     }
 
     view["canvas-container"].append(el);
@@ -354,6 +354,7 @@ function createCards() {
 
 }
 
+
 function addImage(index, key) {
     var scale = window.scale;
     var coord = getRandomLeftTop();
@@ -395,12 +396,14 @@ function addImageToStoryBoardPlus(url) {
                 top: top,
                 angle: 0,
                 hasControls: false,
-                selectable: false
+                selectable: false,
+            scaleX: 155 / img.width,
+        scaleY: 155 / img.height
             })
             .setCoords();
 
-        image.scaleToWidth(155);
-        image.scaleToHeight(155);
+        //image.scaleToWidth(155);
+        //image.scaleToHeight(155);
 
         //console.log(image);
 
@@ -833,15 +836,21 @@ function addAccessors($scope) {
 
         
         var textSample = new fabric.Textbox(text.slice(0, getRandomInt(0, text.length)), {
-            fontSize: 20,
+           
             left: 1200,
             top: 400,
+            fontSize:20,
             fontFamily: 'Inconsolata',
             fontWeight: '',
             originX: 'left',
             width: 300,
             hasRotatingPoint: false,
-            centerTransform: false
+            centerTransform: false,
+            editable:true,
+            hasControls: false,
+            isEditing: true,
+            lockMovementX: true,
+            lockMovementY: true
         });
 
         canvas.add(textSample);
