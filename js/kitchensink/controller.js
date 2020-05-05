@@ -861,7 +861,7 @@ function addAccessors($scope) {
             fontFamily: 'Inconsolata',
             fontWeight: '',
             originX: 'left',
-            width: 300,
+            width: 100,
             hasRotatingPoint: false,
             centerTransform: false,
             editable: true,
