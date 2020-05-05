@@ -111,7 +111,7 @@ var headerheight = 100;
 //var imposed_width = window.innerWidth;;
 
 var imposed_height = 820; //scegli quanto vuoi
-var imposed_width = 1920 / 847 * imposed_height; //non toccare mai
+var imposed_width = 11812 / 6173 * imposed_height; //non toccare mai
 
 $(document).ready(function () {
 
@@ -476,6 +476,46 @@ function exportImage() {
         totalcontext.drawImage(bgcanvas, 0, 0, width, height, 0, 0, width, height);
         totalcontext.drawImage(cardscanvas, 0, 0, width, height, 0, 0, width, height);
 
+        //var png=totalcanvas.toDataURL('image/png');
+        var database64 = totalcanvas.toDataURL({
+            multiplier: 5,
+            format: 'png'
+        });
+        var a = window.document.createElement('a');
+        a.href = database64;
+        a.download = 'design.png';
+        document.body.appendChild(a)
+        a.click();
+        document.body.removeChild(a);
+
+    };
+
+    img.src = '../assets/background.png';
+
+    /*
+    var totalcanvas = document.createElement('canvas');
+    var cardscanvas = document.getElementById("canvas");
+    var bgcanvas = document.createElement('canvas');
+
+    var img = document.createElement('img');
+    var bgcontext = bgcanvas.getContext("2d");
+    var width = imposed_width; //cardscanvas.width;
+    var height = imposed_height; //cardscanvas.height;
+
+    totalcanvas.width = width;
+    totalcanvas.height = height;
+    bgcanvas.width = width;
+    bgcanvas.height = height;
+
+    img.onload = function () {
+
+        bgcontext.drawImage(img, 0, 0, img.width, img.height, 0, 0, width, height);
+
+        var totalcontext = totalcanvas.getContext('2d');
+
+        totalcontext.drawImage(bgcanvas, 0, 0, width, height, 0, 0, width, height);
+        totalcontext.drawImage(cardscanvas, 0, 0, width, height, 0, 0, width, height);
+
         totalcanvas.toBlob(function (blob) {
             var a = window.document.createElement('a');
             a.href = window.URL.createObjectURL(blob);
@@ -488,7 +528,7 @@ function exportImage() {
 
     };
 
-    img.src = '../assets/background.png';
+    img.src = '../assets/background.png';*/
 
 }
 
@@ -868,7 +908,8 @@ function addAccessors($scope) {
             hasControls: false,
             isEditing: false,
             lockMovementX: true,
-            lockMovementY: true
+            lockMovementY: true,
+            splitByGrapheme: true
         });
 
         canvas.add(textSample);
