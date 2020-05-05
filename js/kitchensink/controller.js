@@ -288,6 +288,7 @@ function createCards() {
 
     $(".btn-info").on("click", function () {
         $(".modalinfo").css("display", "block");
+        $(".active").css("display", "block");
     });
 
     $(".close").on("click", function () {
