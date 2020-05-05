@@ -340,23 +340,65 @@ a {
 }
 
 
-a.storyboardPlus {
-    background-image: url(../assets/icon/+%20aggiungi.png);
-    background-size: cover;
+.storyboardPlus {    
     width: 50px;
     height: 50px;
     position: absolute;
 }
 
-a.storyboardPlus.removeImage {
-    background-image: url(../assets/icon/cancella@4x.png);
-    background-size: cover;
-    opacity: 0.6;
-    background-color: red;
+.storyboardPlus.removeImage {    
     margin-left: 80px;
     margin-top: -50px;
     width: 30px;
     height: 30px;
+}
+
+.storyboardPlus input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.storyboardPlus .button_storyboardPlus{
+    background-image: url(../assets/icon/+%20aggiungi.png);
+    background-size: cover;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    background: no-repeat;
+    background-size: 70%;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.storyboardPlus .removeStoryboardImage{
+    background-image: url(../assets/icon/cancella@4x.png);
+    background-size: cover;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    background: no-repeat;
+    background-size: 70%;
+    background-position-x: center;
+    background-position-y: center;
+    position: absolute;
+    z-index: 99999;
+    background-color: red;
+    opacity: 0;  
+    
+}
+
+.storyboardPlus.removeImage .removeStoryboardImage{    
+    opacity: 1;    
+}
+
+.storyboardPlus.removeImage .button_storyboardPlus{    
+    opacity: 0;    
 }
 
 #logo {

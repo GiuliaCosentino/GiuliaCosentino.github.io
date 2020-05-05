@@ -126,14 +126,18 @@ $(document).ready(function () {
     console.log("I'm ready!");
 
     canvas.on('mouse:up', function (options) {
-        var el = options.target._element;
-        var src = $(el).attr('src');
-        var id = src.substring(
-            src.lastIndexOf("/") + 1,
-            src.lastIndexOf(".")
-        );
-        if (id.startsWith("cards")) {
-            showInfo(src);
+        try {
+            var el = options.target._element;
+            var src = $(el).attr('src');
+            var id = src.substring(
+                src.lastIndexOf("/") + 1,
+                src.lastIndexOf(".")
+            );
+            if (id.startsWith("cards")) {
+                showInfo(src);
+            }
+        } catch (error) {
+            //console.log(error);
         }
 
     });
@@ -145,22 +149,27 @@ $(document).ready(function () {
         $(".InfoStep").hide();
         $("#step" + step).show();
     });
-    
-    function initProgress(){
-	var activeDist = $(".slide a.active").position();
-	activeDist = activeDist.left;
-	$(".after").stop().animate({width: activeDist + "px"});
-}
-initProgress();
-$("a").click(function(e){
-	e.preventDefault();
-	$(".slide a").removeClass("active");
-	$(this).addClass("active");
-	initProgress();
-});
-$(window).resize(function(){
-	initProgress();	
-});
+
+    function initProgress() {
+        var activeDist = $(".slide a.active").position();
+        activeDist = activeDist.left;
+        $(".after").stop().animate({
+            width: activeDist + "px"
+        });
+    }
+    initProgress();
+    $("a").click(function (e) {
+        e.preventDefault();
+        $(".slide a").removeClass("active");
+        $(this).addClass("active");
+        initProgress();
+    });
+    $(window).resize(function () {
+        initProgress();
+    });
+
+
+
 
 });
 
@@ -216,54 +225,62 @@ function createPluses() {
     for (n in storyboardPluses) {
         var left = storyboardPluses[n].left * imposed_width / 100;
         var top = storyboardPluses[n].top * imposed_height / 100;
-        el += '<a class="storyboardPlus" data-index="' + n + '" style="left:' + left + 'px; top:' + top + 'px"></a>';
+
+        el += `            
+            <div class="storyboardPlus" style="left: ${left}px; top:${top}px" data-index="${n}">
+                <button class="button_storyboardPlus"></button>
+                <input type="file" name="myfile" id="storyboardPlus_file">
+                <span class="removeStoryboardImage"></span>
+            </div>
+            `;
     }
 
     view["canvas-container"].append(el);
 
-    $("a.storyboardPlus").on("click", function () {
-        var id = $(this).attr("data-index");
-        console.log("Hai cliccato il + numero: " + id);
+    $("#storyboardPlus_file").change(storyboardPlus_fileChanged);
+    $("span.removeStoryboardImage").click(storyboardPlus_imageToRemove);
 
+}
 
-        if ($(this).hasClass("removeImage")) {
-            console.log("elemento da rimuovere");
-            $(this).removeClass("removeImage");
-            var elementToRemove = UserStoryboardImages[id];
-            var elementsToRemove = [];
-            elementsToRemove.push(elementToRemove);
-            canvas.remove.apply(canvas, elementsToRemove);
-            //canvas.remove.apply(canvas, activeObjects);
-        } else {
-            window.storyboardplusclicked = id;
-            $(".modaldraw").show();
-        }
-
-        $(".close").on("click", function () {
-            $(".modaldraw").hide();
-        });
-
-
-    });
-
-
-    $("#StoryBoardImageToUpload").change(function () {
-        if (this.files && this.files[0]) {
-            var img = document.querySelector('img'); // $('img')[0]
-            img.src = URL.createObjectURL(this.files[0]); // set src to blob url
-            img.onload = StoryBoardImageLoaded;
-        }
-        $("#StoryBoardImageToUpload").val("");
-    });
-
-    function StoryBoardImageLoaded() {
-        if (window.storyboardplusclicked != null) {
-            $(".modaldraw").hide();
-            addImageToStoryBoardPlus(this.src);
-        }
-
-
+function StoryBoardImageLoaded() {
+    if (window.storyboardplusclicked != null) {
+        $(".modaldraw").hide();
+        addImageToStoryBoardPlus(this.src);
     }
+}
+
+function storyboardPlus_fileChanged() {
+
+    var parent = $(this).parent();
+
+    var id = parent.attr("data-index");
+    console.log("Hai cliccato il + numero: " + id);
+
+
+    window.storyboardplusclicked = id;
+    if (this.files && this.files[0]) {
+        var img = document.querySelector('img'); // $('img')[0]
+        img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+        img.onload = StoryBoardImageLoaded;
+    }
+    $("#storyboardPlus_file").val("");
+
+}
+
+function storyboardPlus_imageToRemove() {
+    var parent = $(this).parent();
+
+    var id = parent.attr("data-index");
+    console.log("Hai cliccato il + numero: " + id);
+
+    console.log("elemento da rimuovere");
+    parent.removeClass("removeImage");
+    var elementToRemove = UserStoryboardImages[id];
+    var elementsToRemove = [];
+    elementsToRemove.push(elementToRemove);
+    canvas.remove.apply(canvas, elementsToRemove);
+    //canvas.remove.apply(canvas, activeObjects);
+
 
 }
 
@@ -398,8 +415,8 @@ function addImageToStoryBoardPlus(url) {
                 angle: 0,
                 hasControls: false,
                 selectable: false,
-            scaleX: 155 / img.width,
-        scaleY: 155 / img.height
+                scaleX: 155 / img.width,
+                scaleY: 155 / img.height
             })
             .setCoords();
 
@@ -833,23 +850,23 @@ function addAccessors($scope) {
     };
 
     $scope.addTextbox = function () {
-        var text = 'Iserisci il testo qui';
+        var text = 'Inserisci il testo qui';
 
-        
-        var textSample = new fabric.Textbox(text.slice(0, getRandomInt(0, text.length)), {
-           
+
+        var textSample = new fabric.Textbox(text, {
+
             left: 1200,
             top: 400,
-            fontSize:20,
+            fontSize: 20,
             fontFamily: 'Inconsolata',
             fontWeight: '',
             originX: 'left',
             width: 300,
             hasRotatingPoint: false,
             centerTransform: false,
-            editable:true,
+            editable: true,
             hasControls: false,
-            isEditing: true,
+            isEditing: false,
             lockMovementX: true,
             lockMovementY: true
         });
