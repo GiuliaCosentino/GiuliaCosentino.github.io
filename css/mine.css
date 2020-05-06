@@ -254,8 +254,9 @@ a {
     background-position-y: center;
     margin-left: 2%;
 }
+
 .btn-textinsert {
-   background-image: url(../assets/icon/+%20aggiungi.png) !important;
+    background-image: url(../assets/icon/+%20aggiungi.png) !important;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -265,7 +266,7 @@ a {
     background-position-x: center;
     background-position-y: center;
     position: absolute;
-   left: 85%;
+    left: 85%;
     top: 60%;
 }
 
@@ -340,13 +341,13 @@ a {
 }
 
 
-.storyboardPlus {    
+.storyboardPlus {
     width: 50px;
     height: 50px;
     position: absolute;
 }
 
-.storyboardPlus.removeImage {    
+.storyboardPlus.removeImage {
     margin-left: 80px;
     margin-top: -50px;
     width: 30px;
@@ -360,9 +361,11 @@ a {
     top: 0;
     opacity: 0;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
 }
 
-.storyboardPlus .button_storyboardPlus{
+.storyboardPlus .button_storyboardPlus {
     background-image: url(../assets/icon/+%20aggiungi.png);
     border-radius: 50%;
     width: 40px;
@@ -371,30 +374,40 @@ a {
     background-position-x: center;
     background-position-y: center;
     border: none;
+    opacity: 1;
+    cursor: pointer;
 }
 
-.storyboardPlus .removeStoryboardImage{
+.storyboardPlus .removeStoryboardImage {
     background-image: url(../assets/icon/cancella@4x.png);
     background-size: cover;
-    width: 30px;
-    height: 30px;
+
     background-size: 100%;
     background-position-x: center;
     background-position-y: center;
     position: absolute;
     z-index: 99999;
-    opacity: 0; 
-    right: 10%;
-    top:2%;
     
+    right: 10%;
+    top: 2%;
+    opacity: 0;
+
+    cursor: pointer;
+    width: 0px;
+    height: 0px;
+    
+    border-radius: 50%;
+
 }
 
-.storyboardPlus.removeImage .removeStoryboardImage{    
-    opacity: 1;    
+.storyboardPlus.removeImage .removeStoryboardImage {
+    opacity: 1;
+    width: 30px;
+    height: 30px;
 }
 
-.storyboardPlus.removeImage .button_storyboardPlus{    
-    opacity: 0;    
+.storyboardPlus.removeImage .button_storyboardPlus {
+    opacity: 0;
 }
 
 #logo {
@@ -440,35 +453,36 @@ a {
     background-position-x: center;
     background-position-y: center;
     cursor: pointer;
-     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     /* "hand" cursor */
 }
 
 .upload-btn-wrapper {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
 }
 
 
 
 .upload-btn-wrapper input[type=file] {
-  font-size: 100px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
     cursor: pointer;
 }
+
 .upload-btn-wrapper input[type=file]:hover {
- box-shadow: 1px 1px 5px 0px #555555ab;
+    box-shadow: 1px 1px 5px 0px #555555ab;
 }
 
 .custom-file-input::-webkit-file-upload-button {
     visibility: hidden !important;
 }
 
-.btn-upload{
+.btn-upload {
     margin-top: 5%;
     background-image: url(../assets/icon/1x/upload.png) !important;
     border-radius: 50%;
@@ -482,8 +496,8 @@ a {
     cursor: pointer;
 }
 
-.btn-upload:hover{
-    
+.btn-upload:hover {
+
     box-shadow: 1px 1px 5px 0px #555555ab;
 }
 
@@ -493,11 +507,11 @@ a {
     background: linear-gradient(top, #f9f9f9, #e3e3e3);
     background-image: url(../assets/icon/1x/upload.png) !important;
     background-repeat: no-repeat;
-  
-        background-size: 70%;
+
+    background-size: 70%;
     background-position-x: center;
     background-position-y: center;
-        top: 15%;
+    top: 15%;
     position: absolute;
     width: 10px;
     height: 10px;
@@ -514,14 +528,16 @@ a {
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
 
-select, input[type="file"] {
+select,
+input[type="file"] {
     height: 40px;
     *: ;
     margin-top: 4px;
-    line-height: 30px;}
+    line-height: 30px;
+}
 
 .custom-file-input:hover::before {
-  
+
     box-shadow: 1px 1px 5px 0px #555555ab;
 }
 
@@ -547,7 +563,7 @@ select, input[type="file"] {
     padding-left: 3%;
     padding-top: 1%;
     font-size: 18px;
-     padding-right:3%;
+    padding-right: 3%;
 }
 
 #time {
@@ -566,7 +582,7 @@ select, input[type="file"] {
 
 }
 
-.InfoStep{
+.InfoStep {
     display: none;
 }
 
@@ -630,6 +646,6 @@ select, input[type="file"] {
     font-style: normal;
 }
 
-.icons{
+.icons {
     float: right;
 }

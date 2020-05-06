@@ -97,7 +97,6 @@ storyboardPluses.push({
     top: 82,
 }); //8
 
-
 var view = {};
 
 var headerheight = 100;
@@ -249,7 +248,7 @@ function createPluses() {
         el += `            
             <div class="storyboardPlus" style="left: ${left}px; top:${top}px" data-index="${n}">
                 <button class="button_storyboardPlus"></button>
-                <input type="file" name="myfile" id="storyboardPlus_file">
+                <input type="file" name="myfile" id="storyboardPlus_file" class="storyboardPlus_fileclass">
                 <span class="removeStoryboardImage"></span>
             </div>
             `;
@@ -257,7 +256,7 @@ function createPluses() {
 
     view["canvas-container"].append(el);
 
-    $("#storyboardPlus_file").change(storyboardPlus_fileChanged);
+    $(".storyboardPlus_fileclass").change(storyboardPlus_fileChanged);
     $("span.removeStoryboardImage").click(storyboardPlus_imageToRemove);
 
 }
