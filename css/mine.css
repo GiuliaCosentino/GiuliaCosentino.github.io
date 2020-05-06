@@ -175,12 +175,12 @@ a {
     top: 10px;
     right: 10px;
     float: right;
-    font-size: 20px;
+    font-size: 40px;
     font-weight: bold;
     line-height: 20px;
-    color: #000000;
+    color: #2c495e;
     text-shadow: 0 1px 0 #ffffff;
-    opacity: 0.2;
+    opacity: 1;
     filter: alpha(opacity=20);
 }
 
@@ -551,6 +551,11 @@ input[type="file"] {
     text-align: center;
     font-size: 30px;
     font-weight: 500;
+}
+#title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 200;
 }
 
 #texttitle {

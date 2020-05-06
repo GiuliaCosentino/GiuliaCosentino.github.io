@@ -10,8 +10,8 @@ cards.scenario = {
 };
 
 cards.personas = {
-    min: 128,
-    max: 135,
+    min: 133,
+    max: 140,
     color: "#008E22"
 }
 
@@ -23,38 +23,38 @@ cards.missions = {
 
 cards.things = {
     min: 49,
-    max: 76,
+    max: 77,
     color: "#E43D30"
 }
 
 cards.humanactions = {
-    min: 91,
-    max: 98,
+    min: 94,
+    max: 101,
     color: "#62CBC9"
 }
 
 cards.sensors = {
-    min: 117,
-    max: 127,
+    min: 121,
+    max: 132,
     color: "#F18A00"
 }
 
 cards.services = {
-    min: 77,
-    max: 90,
+    min: 78,
+    max: 93,
     color: "#0087F3"
 }
 
 cards.feedback = {
-    min: 99,
-    max: 107,
+    min: 102,
+    max: 111,
     color: "#FFCD00"
 }
 
 
 cards.criteria = {
-    min: 108,
-    max: 116,
+    min: 112,
+    max: 120,
     color: "#DC2597"
 }
 
@@ -354,12 +354,15 @@ function createCards() {
     $(".btn-info").on("click", function () {
         $(".modalinfo").css("display", "block");
         $(".active").css("display", "block");
+		$(".removeStoryboardImage").css("display", "none");
         //giulia
     });
 
     $(".close").on("click", function () {
         $(".modalinfo").css("display", "none");
-        //giulia
+		$(".removeStoryboardImage").css("display", "block");
+		$(".slide a").removeClass("active");
+		$(".InfoStep").css("display", "none");
     });
 
 
