@@ -364,6 +364,14 @@ function createCards() {
 		$(".slide a").removeClass("active");
 		$(".InfoStep").css("display", "none");
     });
+	
+	
+	 $(".btn-textinsert").on("click", function () {
+       
+		$(".btn-textinsert").css("display", "none");
+       
+    });
+
 
 
 
@@ -969,7 +977,7 @@ function addAccessors($scope) {
             fontFamily: 'Inconsolata',
             fontWeight: '',
             originX: 'left',
-            width: 100,
+            width: 300,
             hasRotatingPoint: false,
             centerTransform: false,
             editable: true,
