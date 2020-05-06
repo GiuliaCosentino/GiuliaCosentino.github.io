@@ -51,7 +51,7 @@ a {
 }
 
 #canvas {
-    background-image: url(../../assets/background.png);
+    background-image: url(../../assets/background_small.png);
     background-size: contain;
     background-repeat: no-repeat;
 }

@@ -65,12 +65,12 @@ var UserStoryboardImages = {};
 var storyboardPluses = [];
 
 storyboardPluses.push({
-    left: 44.5,
+    left: 52.2,
     top: 16,
 
 }); //1
 storyboardPluses.push({
-    left: 54.5,
+    left: 64.5,
     top: 16,
 }); //2
 storyboardPluses.push({
@@ -111,7 +111,12 @@ var headerheight = 100;
 //var imposed_width = window.innerWidth;;
 
 var imposed_height = 820; //scegli quanto vuoi
-var imposed_width = 11812 / 6173 * imposed_height; //non toccare mai
+var imposed_width = 1920 / 1003 * imposed_height; //non toccare mai
+
+var _isDragging = false;
+var _isMouseDown = false;
+
+
 
 $(document).ready(function () {
 
@@ -125,21 +130,40 @@ $(document).ready(function () {
 
     console.log("I'm ready!");
 
-    canvas.on('mouse:up', function (options) {
-        try {
-            var el = options.target._element;
-            var src = $(el).attr('src');
-            var id = src.substring(
-                src.lastIndexOf("/") + 1,
-                src.lastIndexOf(".")
-            );
-            if (id.startsWith("cards")) {
-                showInfo(src);
-            }
-        } catch (error) {
-            //console.log(error);
-        }
+    canvas.on('mouse:down', function () {
+        _isMouseDown = true;
+        // other stuff
+    });
 
+    canvas.on('mouse:move', function () {
+        _isDragging = _isMouseDown;
+        // other stuff
+    })
+
+    canvas.on('mouse:up', function (options) {
+        _isMouseDown = false;
+        var isDragEnd = _isDragging;
+        _isDragging = false;
+        if (isDragEnd) {
+            // code for drag complete
+        } else {
+            // code for no drag mouse up
+            try {
+                var el = options.target._element;
+                var src = $(el).attr('src');
+                var id = src.substring(
+                    src.lastIndexOf("/") + 1,
+                    src.lastIndexOf(".")
+                );
+                if (id.startsWith("cards")) {
+                    showInfo(src);
+                }
+            } catch (error) {
+                //console.log(error);
+            }
+
+        }
+        // code for both
     });
 
     resize();
@@ -260,11 +284,40 @@ function storyboardPlus_fileChanged() {
     window.storyboardplusclicked = id;
     if (this.files && this.files[0]) {
         var img = document.querySelector('img'); // $('img')[0]
-        img.src = URL.createObjectURL(this.files[0]); // set src to blob url
-        img.onload = StoryBoardImageLoaded;
+        /*img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+        img.onload = StoryBoardImageLoaded;*/
+        
+        toBase64(
+            URL.createObjectURL(this.files[0]),
+            function (dataUrl) {
+                console.log('RESULT:', dataUrl)
+                img.src = dataUrl;
+                img.onload = StoryBoardImageLoaded;
+            }
+        )        
     }
     $("#storyboardPlus_file").val("");
 
+}
+
+function toBase64(src, callback, outputFormat) {
+    var img = new Image();
+    img.crossOrigin = 'Anonymous';
+    img.onload = function () {
+        var canvas = document.createElement('CANVAS');
+        var ctx = canvas.getContext('2d');
+        var dataURL;
+        canvas.height = this.naturalHeight;
+        canvas.width = this.naturalWidth;
+        ctx.drawImage(this, 0, 0);
+        dataURL = canvas.toDataURL(outputFormat);
+        callback(dataURL);
+    };
+    img.src = src;
+    if (img.complete || img.complete === undefined) {
+        img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+        img.src = src;
+    }
 }
 
 function storyboardPlus_imageToRemove() {
@@ -306,10 +359,12 @@ function createCards() {
     $(".btn-info").on("click", function () {
         $(".modalinfo").css("display", "block");
         $(".active").css("display", "block");
+        //giulia
     });
 
     $(".close").on("click", function () {
         $(".modalinfo").css("display", "none");
+        //giulia
     });
 
 
@@ -479,7 +534,7 @@ function exportImage() {
         //var png=totalcanvas.toDataURL('image/png');
         var database64 = totalcanvas.toDataURL({
             multiplier: 5,
-            format: 'png'
+            format: 'image/png'
         });
         var a = window.document.createElement('a');
         a.href = database64;
@@ -490,7 +545,7 @@ function exportImage() {
 
     };
 
-    img.src = '../assets/background.png';
+    img.src = '../assets/background_small.png';
 
     /*
     var totalcanvas = document.createElement('canvas');
@@ -543,6 +598,21 @@ function loadFile() {
         var data = event.target.result;
         canvas.loadFromJSON(data, function () {
             canvas.renderAll();
+
+            canvas.getObjects().forEach(object => {
+                console.log(object);
+                if (object.isType('image')) {
+                    object.set({
+                        hasControls: false
+                    });
+                } else if (object.isType('text') || object.isType('textbox')) {
+                    object.set({
+                        hasControls: false,
+                        lockMovementX: true,
+                        lockMovementY: true
+                    });
+                }
+            });
         });
     }
     reader.readAsText(files[0]);
