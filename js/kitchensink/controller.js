@@ -65,39 +65,47 @@ var UserStoryboardImages = {};
 var storyboardPluses = [];
 
 storyboardPluses.push({
+<<<<<<< HEAD
     left: 52.2,
+=======
+    left: 52.5,
+>>>>>>> 383b5afcfee4d747a8cd9325b0563347e7c78bcc
     top: 16,
 
 }); //1
 storyboardPluses.push({
+<<<<<<< HEAD
     left: 64.5,
+=======
+    left: 64,
+>>>>>>> 383b5afcfee4d747a8cd9325b0563347e7c78bcc
     top: 16,
 }); //2
 storyboardPluses.push({
-    left: 44.5,
+    left: 52.5,
     top: 38,
 
 }); //3
 storyboardPluses.push({
-    left: 54.5,
+    left: 64,
     top: 38,
 }); //4
 storyboardPluses.push({
-    left: 44.5,
+    left: 52.5,
     top: 60,
 
 }); //5
 storyboardPluses.push({
-    left: 54.5,
+    left: 64,
     top: 60,
 }); //6
 storyboardPluses.push({
-    left: 44.5,
+    left: 52.5,
     top: 82,
 
 }); //7
 storyboardPluses.push({
-    left: 54.5,
+    left: 64,
     top: 82,
 }); //8
 
