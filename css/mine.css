@@ -484,7 +484,7 @@ a {
 
 .btn-upload {
     margin-top: 5%;
-    background-image: url(../assets/icon/1x/upload.png) !important;
+   background-image: url(../assets/icon/1x/upload.png) !important;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -492,14 +492,14 @@ a {
     background: no-repeat;
     background-size: 70%;
     background-position-x: center;
-    background-position-y: mcenter;
+    background-position-y: center;
     cursor: pointer;
 }
 
 .btn-addcard{
     margin-top: 5%;
     background-image: url(../assets/icon/+%20aggiungi.png) !important;
-    border-radius: 50%;
+    border-radius: 10%;
     width: 40px;
     height: 40px;
     background-color: white;
