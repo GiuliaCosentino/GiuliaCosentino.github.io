@@ -80,7 +80,7 @@ a {
     position: fixed;
     z-index: 1;
     padding-top: 100px;
-    left: 89%;
+    left: 86%;
     top: 40%;
     width: 400px;
     height: 400px;
@@ -492,7 +492,7 @@ a {
     background: no-repeat;
     background-size: 70%;
     background-position-x: center;
-    background-position-y: center;
+    background-position-y: mcenter;
     cursor: pointer;
 }
 
