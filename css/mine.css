@@ -496,6 +496,20 @@ a {
     cursor: pointer;
 }
 
+.btn-addcard{
+    margin-top: 5%;
+    background-image: url(../assets/icon/+%20aggiungi.png) !important;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    background: no-repeat;
+    background-size: 70%;
+    background-position-x: center;
+    background-position-y: center;
+    cursor: pointer;
+}
+
 .btn-upload:hover {
 
     box-shadow: 1px 1px 5px 0px #555555ab;
